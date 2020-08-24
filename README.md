@@ -2,7 +2,7 @@
 # DBT-all-daily-Assignment-
 
 
-# Aug 24
+### Aug 24
       Select statement
       1. Display table structure for table employees and departments. 2. Check all table names available in your schema.
       3. Display all employees data
