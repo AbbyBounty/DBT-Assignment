@@ -1,6 +1,7 @@
 ## Welcome to GitHub Pages
 
-
+```
+[DAY 1](#section)
 
 ```markdown
 Syntax highlighted code block
@@ -8,7 +9,7 @@ Syntax highlighted code block
 # Header 1
 ## Header 2
 ### Header 3
--[DAY 1](#section)
+-
 - Bulleted
 - List
 
