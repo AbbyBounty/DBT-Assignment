@@ -1,7 +1,6 @@
 ## Welcome to GitHub Pages
 
-```
-[DAY 1](#section)
+  [DAY 1](#section)
 
 ```markdown
 Syntax highlighted code block
