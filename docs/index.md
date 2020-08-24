@@ -9,7 +9,7 @@
    ```C
     PRN:200243020003
   ```
- ## Select Statment
+
  
  #### 1. Display table structure for table employees and departments.
  ```sql
