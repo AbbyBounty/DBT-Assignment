@@ -7,7 +7,7 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-[DAY 1] (https://github.com/AbbyBounty/DBT-all-daily-Assignment/docs/index.md#section)
+[DAY 1](https://github.com/AbbyBounty/DBT-all-daily-Assignment-/edit/master/docs/index.md)
 ```markdown
 Syntax highlighted code block
 
