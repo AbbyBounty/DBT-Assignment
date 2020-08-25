@@ -1,10 +1,10 @@
 ## Welcome to My Assignment.
 
 
-  [Day2](#Aug24)  [Day3](#Aug24)
+  [Day2](#Day2)  [Day3](#Day3)
 
  
- # #Aug24
+ # Day2
 
    ```C
     PRN:200243020003
