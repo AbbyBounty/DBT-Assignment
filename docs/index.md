@@ -1,10 +1,10 @@
-## Welcome to GitHub Pages
+## Welcome to My Assignment.
 
 
-  [Day2](#Aug24)
+  [Day2](#Aug24)  [Day3](#Aug24)
 
  
- # Aug24
+ # #Aug24
 
    ```C
     PRN:200243020003
