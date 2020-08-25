@@ -14,11 +14,7 @@
    ```C
     PRN:200243020003
   ```
- #### 1. Display table structure for table employees and departments.
- ```sql
-DESCRIBE employees;
-DESCRIBE departments;
-```
+
 #### 2. Check all table names available in your schema.
 ```sql
 SELECT * FROM tab;
