@@ -2,8 +2,9 @@
 
 
 ```C
-    PRN:200243020003
+PRN:200243020003
 ```
+### Restricting and Sorting data
 
 #### 1. Display last_name for employees starting with capital 'A'
 ```sql
@@ -47,7 +48,7 @@ SELECT
 FROM
     employees
 WHERE
-    hire_date LIKE '%AUG%';
+    hire_date LIKE '%March%';
 ```
 
 
