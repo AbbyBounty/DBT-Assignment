@@ -4,13 +4,16 @@
   [Day2](#Day2)  [Day3](#Day3)
 
  
+ 
+ 
+ 
+ 
+ 
  # Day2
 
    ```C
     PRN:200243020003
   ```
-
- 
  #### 1. Display table structure for table employees and departments.
  ```sql
 DESCRIBE employees;
