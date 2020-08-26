@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    *
+    {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    label
+    {
+        font-size: 18px;
+        width: 120px;
+        display: inline-block;
+    }
+    .form-group{
+        margin: 15px;
+    }
+    .form-control{
+       width: 250px;
+       padding: 6px;
+       font-size: 18px;
+      
+
+    }
+    input.form-control:focus{
+        outline: none;
+        box-shadow: 0 0 10px 0px black;
+    }
+    textarea.form-control:focus{
+        outline: none;
+        box-shadow: 0 0 10px 0px black;
+    }
+    textarea
+    {
+        resize: none;
+    }
+
+    .btn
+    {
+        border: none;
+        height: 30px;
+        width: 80px;
+        border-radius: 5px;
+      
+        color: white;
+    }
+    .btn-submit
+    {
+        background-color:green;
+       
+    }
+    .btn-cancle
+    {
+        background-color: red;
+        margin-left: 10px;
+    }
+
+    .btn:hover{
+        box-shadow: 0 0 3px 3px #5485C4;
+        cursor: pointer;
+    }
+
+    form{
+        border: black solid;
+        padding: 15px;
+        width:450px;
+        height: 500px;
+        background-color: bisque;
+        margin: auto;
+        border-radius: 10px;
+        border-color:wheat;
+        box-shadow: 0 0 10px 0px black;
+    }
+    h1
+    {
+        text-align: center;
+    }
+</style>
+
+</head>
+<body>
+    
+<h1>sign up</h1>
+<form action="">
+
+<div class="form-group">
+    <label for="first-name">First Name</label>
+    <input placeholder="first name" class="form-control" id="first-name" type="text">
+</div>
+
+<div class="form-group">
+    <label for="last-name">Last Name</label>
+<input  placeholder="last name"type="text" class="form-control" id="last-name">
+</div>
+
+<div class="form-group">
+    <label for="age">Age</label>
+<input placeholder="age" type="number" class="form-control" id="age">
+</div>
+
+<div class="form-group">
+    <label for="birth-date">Birthdate</label>
+    <input type="date"class="form-control" id="birth-date">
+</div>
+
+<div class="form-group">
+    <label for="address">Address</label>
+    <textarea placeholder="Address" class="form-control" name="" id="" cols="30" rows="10"></textarea>
+</div>
+
+<div class="form-group">
+    <label for=""></label>
+    <input type="submit" class="btn btn-submit"  value="Register">
+    <input type="reset" class="btn btn-cancle" value="reset">
+</div>
+
+</form>
+
+</body>
+</html>
