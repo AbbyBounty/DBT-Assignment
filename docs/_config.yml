@@ -1,1 +1,35 @@
 theme: jekyll-theme-hacker
+author:
+  name             : "Abhilash Kamble"
+  avatar           : /assets/images/avatar.jpg # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "CDAC Student,FullStack Devloper,Devops,Ethical Hacker"
+  location         : "Pune,India"
+  email            : "abhilash.kamble376@gmail.com"
+  uri              :
+  bitbucket        : 
+  codepen          :
+  dribbble         :
+  flickr           :
+  facebook         : "abhilash.kamble31"
+  foursquare       :
+  github           : "abbybounty"
+  gitlab           : "abbybounty"
+  google_plus      :
+  keybase          :
+  instagram        : "abby_bounty"
+  lastfm           :
+  linkedin         : "abhilashkamble" # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
+  pinterest        :
+  soundcloud       :
+  stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
+  steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
+  tumblr           :
+  twitter          : "abby_bounty"
+  vine             :
+  weibo            :
+  xing             :
+  codechef         : "abbybounty"
+  hackerrank       : "abby_bounty"  
+  youtube          : #"https://www.youtube.com/channel/UC3fGtF0Wab9woqelMzS1Xnw" # "https://youtube.com/c/MichaelRoseDesign"
+
+
