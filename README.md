@@ -37,3 +37,17 @@
       13. Write a query to display emp_id,last_name,salary for employees working under department which users prompt's while executing query 14. Write a query to display emp_id,last_name,salary for employees earning salary specified by user and sort data on the basis of user specified column.
       15. Display salary for employees whose salary is not equal to 2500 or 3500 or 7000
       16. Try out same queries (wherever applicable)with substitution variable.
+      
+   ### Aug 26
+         1. First Rewrite /practice all demo queries taught in session.
+      2. Display full names of employees separated by space and initial letter of every word should be in capital, rename column as "Name"
+      3. Display last_name in capital letters
+      4. Generate login_id for employees consisting upto 5 characters of first_name and initial letter first last_name and underscore as a separator
+      5. Display system date through query
+      6. Display emp_id,last_name, annual salary rounded to nearest whole number .
+      7. Write query to display hike in salary by 15.5% and round to nearest whole number
+      8. Modify above query in different script file where you should also display revised salary i.e. old salary subtracted from new salary
+      9. Display last_name for employees where starting character will be prompted by user and the case should not affect to output
+      10. Display last_name and length of last-name whose names start with 'J' or 'H' or 'T'. Sort data in alphabetical order of names
+      11. HR department wants to check for how many months every employee has worked with the organization sort data by order of months. (Hint: calculate months between todays date and hire_date)
+      12. Display last_name of employee and indicate the amount of their salaries with asterisks. Each asterisk signifies a thousand dollars sort data in desending order of salary. Eg: king earns 24,000 so 24 asterisks should be displayed and not the salary
