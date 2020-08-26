@@ -4,9 +4,7 @@
   [Day2](#Day2)  [Day3](https://abbybounty.github.io/DBT-Assignment-/#Day3)
 
  
- ```html
-  <h1>hello</h1>
- ```
+ 
  
  
  
