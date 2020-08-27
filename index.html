@@ -408,6 +408,7 @@
 			<li class="ul"><a id="t" href="#day2">Day 2</a></li>
 			<li class="ul"><a id="t" href="#day3">Day 3</a></li>
 			<li class="ul"><a id="t" href="#day4">Day 4</a></li>
+			<li class="ul"><a id="t" href="#day5">Day 5</a></li>
 
 		</ul>
 	</div>
@@ -754,6 +755,8 @@
 	  salary <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">IN</span> ( <span class="hljs-number">2500</span>, <span class="hljs-number">3500</span>, <span class="hljs-number">7500</span> );
   </div></code></pre>
   <br><br><br>	<br><br><br> 	<br><br>
+
+  <!-- <div>day 4</div> -->
 	<div class="header">
 		<h1 class="box"><a id="t" href="">Day 4</a></h1>
 	</div>
@@ -902,8 +905,111 @@
 	<span class="hljs-keyword">concat</span>(rpad(salary, <span class="hljs-number">2</span>, <span class="hljs-string">'*'</span>), <span class="hljs-string">'****'</span>)
 <span class="hljs-keyword">FROM</span>
 	EMPLOYEES;
+	
 </div></code></pre>
+<hr>
+<!-- <div> day 5</div> -->
+<div class="header">
+	<h1 class="box"><a id="t" href="">Day 5</a></h1>
+</div>
+<br><br><br>
+<h1 id="day5"></h1>
+<pre class="hljs"><code><div>PRN : <span class="hljs-number">200243020003</span>
+</div></code></pre>
+<h2 id="converstion-functions">Converstion Functions</h2>
+<h4 id="1-try-executing-round-and-truc-for-dates-of-your-choice-instead-of-sysdate">1. Try executing round() and truc() for dates of your choice instead of sysdate</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	<span class="hljs-keyword">round</span>(<span class="hljs-keyword">to_date</span>(<span class="hljs-string">'23-OCT-2020'</span>), <span class="hljs-string">'year'</span>)
+<span class="hljs-keyword">FROM</span>
+	DUAL;
 
+<span class="hljs-keyword">SELECT</span>
+	trunc(<span class="hljs-keyword">to_date</span>(<span class="hljs-string">'23-OCT-2020'</span>), <span class="hljs-string">'year'</span>)
+<span class="hljs-keyword">FROM</span>
+	DUAL;
+</div></code></pre>
+<h4 id="2-display-empidlastnamesalary-in-following-format-eg-100-king-24000-having--and-comma">2. Display emp_id,last_name,salary in following format eg: 100 King $24,000 (having $ and comma)</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	<span class="hljs-keyword">concat</span>(<span class="hljs-keyword">concat</span>(<span class="hljs-keyword">concat</span>(EMPLOYEE_ID, <span class="hljs-string">' '</span>), LAST_NAME), to_char(salary, <span class="hljs-string">'$99,999'</span>)) <span class="hljs-string">"Employee"</span>
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES;
+</div></code></pre>
+<h4 id="3-display-hiredate-of-employees-in-following-format-eg-17th-of-january-in-1997">3. Display hire_date of employees in following format eg: 17th of January in 1997</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	to_char(hire_date, <span class="hljs-string">'fmDDth MON "in"YYYY'</span>) <span class="hljs-string">"Date"</span>
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES;
+</div></code></pre>
+<h4 id="4-calculate-annual-salary-12salarycommission-for-employees-wheather-he-earns-commission-or-not">4. Calculate annual salary (12<em>salary</em>commission) for employees wheather he earns commission or not.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	first_name,
+	nvl2 (<span class="hljs-keyword">round</span>(<span class="hljs-number">12</span> * salary * COMMISSION_PCT),
+		<span class="hljs-string">'earn'</span>,
+		<span class="hljs-string">'do Not earn'</span>) commison
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES;
+</div></code></pre>
+<h4 id="5-write-a-query-to-display-empid-annual-salary-for-all-employees-also-next-column-should-describe-salcomm-or-sal-accordingly-eg-179-salcomm-7440">5. Write a query to display empid ,annual salary for all employees also next column should describe 'sal+comm' or 'sal' accordingly. Eg: 179 sal+comm 7440</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	first_name,
+	salary + NVL (COMMISSION_PCT,
+		<span class="hljs-number">0</span>) <span class="hljs-string">"SAL+COMM"</span>
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES;
+</div></code></pre>
+<h4 id="6-write-a-query-where-organization-wants-to-give-a-salary-increment-of-2000-for-all-employeesand-who-get-commission-the-query-should-compute-the-incremented-salary-added-to-the-commission-amount">6. Write a query where organization wants to give a salary increment of $2,000 for all employees.And who get commission, the query should compute the incremented salary added to the commission amount.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	first_name,
+	salary + NVL (COMMISSION_PCT,
+		<span class="hljs-number">0</span>) <span class="hljs-string">"SAL+COMM"</span>,
+	salary + NVL (COMMISSION_PCT,
+		<span class="hljs-number">0</span>) + <span class="hljs-number">2000</span> <span class="hljs-string">"increment of 2,000"</span>
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES;
+</div></code></pre>
+<h4 id="7-create-a-report-that-produces-the-following-for-each-employee-employee-last-name-earns-salary-monthly-but-wants-heart-times-of-current-salary-label-the-column-dream-salaries">7. Create a report that produces the following for each employee: <employee last name> earns <salary> monthly but wants <img class="emoji" alt="heart" src="data:image/png;base64,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" /> times of current salary.&gt;. Label the column Dream Salaries.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	last_name,
+	<span class="hljs-keyword">round</span>(salary / <span class="hljs-number">12</span>) <span class="hljs-string">"Monthly SALARY"</span>,
+	salary * <span class="hljs-number">3</span> <span class="hljs-string">"DREAM SALRAY"</span>
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES;
+</div></code></pre>
+<h4 id="8-display-each-employees-last-name-hire-date-and-salary-review-date-which-is-the-first-monday-after-six-months-of-service-label-the-column-review-format-the-dates-to-appear-in-the-format-similar-to-monday-the-thirty-first-of-july-2000">8. Display each employee?s last name, hire date, and salary review date, which is the first Monday after six months of service. Label the column REVIEW. Format the dates to appear in the format similar to ?Monday, the Thirty-First of July, 2000.?</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	<span class="hljs-keyword">to_date</span>(next_day (add_months (hire_date, <span class="hljs-string">'6'</span>), <span class="hljs-string">'mon'</span>), <span class="hljs-string">'dd mon yy'</span>) <span class="hljs-string">"REVIEW"</span>
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES;
+</div></code></pre>
+<h4 id="9-display-the-last-name-hire-date-and-day-of-the-week-on-which-the-employee-started-label-the-column-day-order-the-results-by-the-day-of-the-week-starting-with-monday">9. Display the last name, hire date, and day of the week on which the employee started. Label the column DAY. Order the results by the day of the week, starting with Monday.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	first_name,
+	to_char(hire_date, <span class="hljs-string">'day'</span>)
+	<span class="hljs-keyword">day</span>,
+	to_char(hire_date, <span class="hljs-string">'d'</span>) - <span class="hljs-number">1</span> Day_number
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span>
+	Day_number;
+</div></code></pre>
+<h4 id="10-create-a-query-that-displays-the-employees-last-names-and-commission-amounts-if-an-employee-does-not-earn-commission-show-no-commission-label-the-column-comm">10. Create a query that displays the employees? last names and commission amounts. If an employee does not earn commission, show ?No Commission.? Label the column COMM.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	last_name,
+	nvl2 (COMMISSION_PCT,
+		<span class="hljs-string">'earn'</span>,
+		<span class="hljs-string">'dont earn'</span>)
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES;
+</div></code></pre>
+<h4 id="11-using-the-decode-function-write-a-query-that-displays-the-grade-of-all-employees-based-on-the-value-of-the-column-jobid-using-the-following-data">11. Using the DECODE function, write a query that displays the grade of all employees based on the value of the column JOB_ID, using the following data:</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	last_name,
+	job_id,
+	salary,
+	<span class="hljs-keyword">decode</span>(job_id, <span class="hljs-string">'AD_PRES'</span>, <span class="hljs-string">'A'</span>, <span class="hljs-string">'IT_PROG'</span>, <span class="hljs-string">'C'</span>, <span class="hljs-string">'ST_MAN'</span>, <span class="hljs-string">'B'</span>, <span class="hljs-string">'SA_REP'</span>, <span class="hljs-string">'D'</span>, <span class="hljs-string">'ST_CLERK'</span>, <span class="hljs-string">'E'</span>, <span class="hljs-number">0</span>) <span class="hljs-string">"REVISED_SALARY"</span>
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES;
+</div></code></pre>
 </body>
 
 </html>
