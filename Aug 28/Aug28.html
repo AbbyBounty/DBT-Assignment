@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Aug28.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<link rel="stylesheet" href="/DBT-Assignment/css/styles.css">
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+
+<div class="header">
+	<div class="line">
+		<ul class="ul">
+			<li  class="red li"></li>
+			<li  class="yellow li"></li>
+			<li  class="green li"></li>
+		</ul>
+	</div>
+
+	<div class="sql">docker exec -it oracle bash -c "source /home/oracle/.bashrc; sqlplus /nolog"
+		<br>
+		SQL*Plus: Release 12.2.0.1.0
+		<br> <br>
+		SQL> <span class="span">SELECT</span> * <span class="span"> FROM</span> DBT-ASSIGNMENT <span
+			class="span">WHERE</span> Day= <span class="day">' 5 '</span>;
+			<br>
+			<a class="nav-li"  href="/DBT-Assignment/Aug 24/Aug24.html">DAY 2</a>
+		<a class="nav-li"  href="/DBT-Assignment/Aug 25/Aug25.html">DAY 3</a>
+		<a class="nav-li" href="/DBT-Assignment/Aug 26/Aug26.html">DAY 4</a>
+		<a class="nav-li"  href="/DBT-Assignment/Aug 27/Aug27.html">DAY 5</a>
+		<a class="nav-li"   href="/DBT-Assignment/Aug 28/Aug28.html">DAY 6</a>
+
+	</div>
+
+   
+</div>
+<h1 id="day-6">Day 6</h1>
+<pre class="hljs"><code><div>PRN : <span class="hljs-number">200243020003</span>
+</div></code></pre>
+<h3 id="group-functions">Group Functions</h3>
+<h4 id="1-first-rewrite-practice-all-demo-queries-taught-in-session">1. First Rewrite /practice all demo queries taught in session.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">COUNT</span>(*) <span class="hljs-keyword">FROM</span> EMPLOYEES;
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">COUNT</span>(commission_pct) <span class="hljs-keyword">FROM</span> EMPLOYEES;
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">COUNT</span>(nvl(commission_pct,<span class="hljs-number">0</span>)) <span class="hljs-keyword">FROM</span> EMPLOYEES;
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">COUNT</span>(<span class="hljs-keyword">DISTINCT</span> department_id) <span class="hljs-keyword">FROM</span> EMPLOYEES;
+<span class="hljs-keyword">SELECT</span> DEPARTMENT_ID, <span class="hljs-keyword">MAX</span>(SALARY) <span class="hljs-keyword">FROM</span> EMPLOYEES <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> DEPARTMENT_ID <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">by</span> DEPARTMENT_ID;
+<span class="hljs-keyword">SELECT</span> DEPARTMENT_ID, <span class="hljs-keyword">MAX</span>(HIRE_DATE) <span class="hljs-keyword">FROM</span> EMPLOYEES <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> DEPARTMENT_ID;
+<span class="hljs-keyword">SELECT</span> DEPARTMENT_ID, <span class="hljs-keyword">round</span>(<span class="hljs-keyword">AVG</span>(SALARY)) <span class="hljs-keyword">FROM</span> EMPLOYEES <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> DEPARTMENT_ID;
+<span class="hljs-keyword">SELECT</span> JOB_ID, <span class="hljs-keyword">MAX</span>(SALARY) <span class="hljs-keyword">FROM</span> EMPLOYEES <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> JOB_ID <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> JOB_ID;
+<span class="hljs-keyword">SELECT</span> job_id, DEPARTMENT_ID <span class="hljs-keyword">FROM</span> EMPLOYEES <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> DEPARTMENT_ID;
+<span class="hljs-keyword">SELECT</span> DEPARTMENT_ID, <span class="hljs-keyword">COUNT</span>(employee_id) <span class="hljs-keyword">FROM</span> EMPLOYEES <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">by</span> DEPARTMENT_ID,JOB_ID <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">by</span> DEPARTMENT_ID;
+<span class="hljs-keyword">SELECT</span>  DEPARTMENT_ID,JOB_ID,<span class="hljs-keyword">COUNT</span>(EMPLOYEE_ID) <span class="hljs-keyword">FROM</span> EMPLOYEES <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> DEPARTMENT_ID,JOB_ID <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> DEPARTMENT_ID;
+<span class="hljs-keyword">SELECT</span>  DEPARTMENT_ID,JOB_ID,<span class="hljs-keyword">SUM</span>(SALARY) <span class="hljs-keyword">FROM</span> EMPLOYEES <span class="hljs-keyword">WHERE</span> DEPARTMENT_ID &gt;<span class="hljs-number">40</span> <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">by</span> DEPARTMENT_ID,JOB_ID <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> DEPARTMENT_ID;
+<span class="hljs-keyword">SELECT</span>  DEPARTMENT_ID,<span class="hljs-keyword">AVG</span>(SALARY) <span class="hljs-keyword">FROM</span> EMPLOYEES <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">AVG</span>(SALARY) &gt; <span class="hljs-number">8000</span> <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> DEPARTMENT_ID;
+<span class="hljs-keyword">SELECT</span>  DEPARTMENT_ID, <span class="hljs-keyword">MAX</span>(SALARY) <span class="hljs-keyword">FROM</span> EMPLOYEES <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> DEPARTMENT_ID;
+<span class="hljs-keyword">SELECT</span>  DEPARTMENT_ID, <span class="hljs-keyword">MAX</span>(SALARY) sal <span class="hljs-keyword">FROM</span> EMPLOYEES <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> DEPARTMENT_ID <span class="hljs-keyword">HAVING</span> <span class="hljs-keyword">MAX</span>(SALARY)&gt;<span class="hljs-number">10000</span>;
+<span class="hljs-keyword">SELECT</span>  JOB_ID,<span class="hljs-keyword">SUM</span>(SALARY) <span class="hljs-keyword">FROM</span> EMPLOYEES <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> JOB_ID <span class="hljs-keyword">HAVING</span> <span class="hljs-keyword">sum</span>(SALARY)&gt;<span class="hljs-number">13000</span> <span class="hljs-keyword">AND</span> JOB_ID <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'%REP%'</span>;
+<span class="hljs-keyword">SELECT</span> EMPLOYEE_ID,LAST_NAME, DEPARTMENT_ID  <span class="hljs-keyword">FROM</span> EMPLOYEES  <span class="hljs-keyword">JOIN</span> DEPARTMENTS
+</div></code></pre>
+<h4 id="2-display-maximum-salary-from-department-20">2. Display maximum salary from department 20</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	DEPARTMENT_ID,
+	<span class="hljs-keyword">MAX</span>(SALARY)
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span>
+	DEPARTMENT_ID
+<span class="hljs-keyword">HAVING</span>
+	DEPARTMENT_ID = <span class="hljs-number">20</span>;
+</div></code></pre>
+<h4 id="3-display-the-oldest-hiredate-from-employees">3. Display the oldest hire_date from employees</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	<span class="hljs-keyword">MIN</span>(HIRE_DATE) <span class="hljs-string">"Oldest date"</span>
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES;
+</div></code></pre>
+<h4 id="4-find-out-the-correct-average-salary">4. Find out the correct average salary</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	EMPLOYEE_ID,
+	<span class="hljs-keyword">round</span>(<span class="hljs-keyword">AVG</span>(SALARY)) <span class="hljs-string">"AVg Salary"</span>
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span>
+	EMPLOYEE_ID;
+</div></code></pre>
+<h4 id="5-display-count-of-employees-earning-commission">5. Display count of employees earning commission</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	DEPARTMENT_ID,
+	<span class="hljs-keyword">COUNT</span>(COMMISSION_PCT) <span class="hljs-string">"count"</span>
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span>
+	DEPARTMENT_ID;
+</div></code></pre>
+<h4 id="6-display-departmentidmaximum-salary-department-wise">6. Display department_id,maximum salary department-wise</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	DEPARTMENT_ID,
+	<span class="hljs-keyword">MAX</span>(SALARY) <span class="hljs-string">"Max salary"</span>
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span>
+	DEPARTMENT_ID
+<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span>
+	DEPARTMENT_ID;
+</div></code></pre>
+<h4 id="7-display-departmentidminimum-salary-for-those-departments-whose-min-sal-is-less-than-7000">7. Display department_id,minimum salary for those departments whose min sal is less than 7000</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	DEPARTMENT_ID,
+	<span class="hljs-keyword">MIN</span>(SALARY) <span class="hljs-string">"min salary"</span>
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span>
+	DEPARTMENT_ID
+<span class="hljs-keyword">HAVING</span>
+	<span class="hljs-keyword">MIN</span>(SALARY) &lt; <span class="hljs-number">7000</span>;
+</div></code></pre>
+<h4 id="8-write-a-query-to-display-the-number-of-people-with-the-same-job-count-jobwise">8. Write a query to display the number of people with the same job. (count jobwise)</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	DEPARTMENT_ID,
+	<span class="hljs-keyword">COUNT</span>(JOB_ID)
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span>
+	DEPARTMENT_ID
+<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span>
+	DEPARTMENT_ID;
+</div></code></pre>
+<h4 id="9-re-write-the-above-query-where-user-is-prompted-for-jobid-eg--%22rep%22-if-entered-they-display-all-emp-with-jobid-having-rep">9. Re-write the above query where user is prompted for job_id. (eg. : &quot;REP&quot; if entered they display all emp with job_id having REP</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	FIRST_NAME
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">WHERE</span>
+	JOB_ID = &amp; <span class="hljs-keyword">id</span>;
+</div></code></pre>
+<h4 id="10-find-the-difference-between-the-highest-and-lowest-salaries-label-the-column-difference">10. Find the difference between the highest and lowest salaries. Label the column DIFFERENCE</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	DEPARTMENT_ID,
+	<span class="hljs-keyword">MAX</span>(SALARY) - <span class="hljs-keyword">MIN</span>(SALARY) <span class="hljs-string">"diffrence"</span>
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span>
+	DEPARTMENT_ID;
+</div></code></pre>
+<h4 id="11-create-a-report-to-display-the-manager-number-and-the-salary-of-the-lowest-paid-employee-for-that-manager-exclude-anyone-whose-manager-is-not-known-exclude-any-groups-where-the-minimum-salary-is-6000-or-less-sort-the-output-in-descending-order-of-salary">11. Create a report to display the manager number and the salary of the lowest-paid employee for that manager. Exclude anyone whose manager is not known. Exclude any groups where the minimum salary is $6,000 or less. Sort the output in descending order of salary.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	MANAGER_ID,
+	<span class="hljs-keyword">MIN</span>(SALARY)
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">WHERE</span>
+	MANAGER_ID <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span>
+	MANAGER_ID
+<span class="hljs-keyword">HAVING</span>
+	<span class="hljs-keyword">MIN</span>(SALARY) &gt; <span class="hljs-number">6000</span>
+<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span>
+	<span class="hljs-keyword">MIN</span>(SALARY)
+	<span class="hljs-keyword">DESC</span>;
+</div></code></pre>
+<h4 id="12-create-a-query-to-display-the-total-number-of-employees-hired-in-1995-1996-1997-and-1998-create-appropriate-column-headings">12. Create a query to display the total number of employees hired in 1995, 1996, 1997, and 1998. Create appropriate column headings.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	DEPARTMENT_ID,
+	<span class="hljs-keyword">COUNT</span>(to_char(HIRE_DATE, <span class="hljs-string">'yyyy'</span>))
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span>
+	DEPARTMENT_ID
+<span class="hljs-keyword">HAVING</span>
+	<span class="hljs-keyword">COUNT</span>(to_char(HIRE_DATE, <span class="hljs-string">'yyyy'</span>))
+	<span class="hljs-keyword">in</span>(<span class="hljs-number">1995</span>, <span class="hljs-number">1996</span>, <span class="hljs-number">1997</span>, <span class="hljs-number">1998</span>);
+</div></code></pre>
+
+</body>
+</html>
