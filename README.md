@@ -51,3 +51,17 @@
       10. Display last_name and length of last-name whose names start with 'J' or 'H' or 'T'. Sort data in alphabetical order of names
       11. HR department wants to check for how many months every employee has worked with the organization sort data by order of months. (Hint: calculate months between todays date and hire_date)
       12. Display last_name of employee and indicate the amount of their salaries with asterisks. Each asterisk signifies a thousand dollars sort data in desending order of salary. Eg: king earns 24,000 so 24 asterisks should be displayed and not the salary
+      
+      
+   ### Aug 28
+         1. First Rewrite /practice all demo queries taught in session. 2. Display maximum salary from department 20
+      3. Display the oldest hire_date from employees
+      4. Find out the correct average salary
+      5. Display count of employees earning commission
+      6. Display department_id,maximum salary department-wise
+      7. Display department_id,minimum salary for those departments whose min sal is less than 7000
+      8. Write a query to display the number of people with the same job. (count jobwise)
+      9. Re-write the above query where user is prompted for job_id. (eg. : "REP" if entered they display all emp with job_id having REP
+      10. Find the difference between the highest and lowest salaries. Label the column DIFFERENCE
+      11. Create a report to display the manager number and the salary of the lowest-paid employee for that manager. Exclude anyone whose manager is not known. Exclude any groups where the minimum salary is $6,000 or less. Sort the output in descending order of salary.
+      12. Create a query to display the total number of employees hired in 1995, 1996, 1997, and 1998. Create appropriate column headings.
