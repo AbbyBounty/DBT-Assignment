@@ -119,7 +119,7 @@ GROUP BY
 	DEPARTMENT_ID
 HAVING
 	COUNT(to_char(HIRE_DATE, 'yyyy'))
-	in(1995, 1996, 1997, 1998);
+
 
 
 
