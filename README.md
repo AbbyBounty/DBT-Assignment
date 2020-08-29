@@ -38,6 +38,23 @@
       15. Display salary for employees whose salary is not equal to 2500 or 3500 or 7000
       16. Try out same queries (wherever applicable)with substitution variable.
       
+
+### Aug 27
+            1. Try executing round() and truc() for dates of your choice instead of sysdate
+            2. Display emp_id,last_name,salary in following format eg: 100 King $24,000 (having $ and comma)
+            3. Display hire_date of employees in following format eg: 17th of January in 1997
+            4. Calculate annual salary (12*salary*commission) for employees wheather he earns commission or not.
+            5. Write a query to display empid ,annual salary for all employees also next column should describe 'sal+comm' or 'sal' accordingly. Eg: 179 sal+comm 7440
+            6. Write a query where organization wants to give a salary increment of $2,000 for all employees.And who get commission, the query should compute the incremented salary added to the commission amount.
+            7. Create a report that produces the following for each employee: <employee last name> earns <salary> monthly but wants <3 times of current salary.>. Label the column Dream Salaries.
+            8. Display each employee?s last name, hire date, and salary review date, which is the first Monday after six months of service. Label the column REVIEW. Format the dates to appear in the format similar to ?Monday, the Thirty-First of July, 2000.?
+            9. Display the last name, hire date, and day of the week on which the employee started. Label the column DAY. Order the results by the day of the week, starting with Monday.
+            10. Create a query that displays the employees? last names and commission amounts. If an employee does not earn commission, show ?No Commission.? Label the column COMM.
+            11. Using the DECODE function, write a query that displays the grade of all employees based on the value of the column JOB_ID, using the following data:
+
+                  job AD_PRES A
+            ST_MAN B IT_PROG C
+
    ### Aug 26
          1. First Rewrite /practice all demo queries taught in session.
       2. Display full names of employees separated by space and initial letter of every word should be in capital, rename column as "Name"
