@@ -65,3 +65,21 @@
       10. Find the difference between the highest and lowest salaries. Label the column DIFFERENCE
       11. Create a report to display the manager number and the salary of the lowest-paid employee for that manager. Exclude anyone whose manager is not known. Exclude any groups where the minimum salary is $6,000 or less. Sort the output in descending order of salary.
       12. Create a query to display the total number of employees hired in 1995, 1996, 1997, and 1998. Create appropriate column headings.
+
+
+### Aug 29
+      1. Write a query for the HR department to produce the addresses of all the departments. Use the LOCATIONS and
+      COUNTRIES tables. Show the location ID, street address, city, state or province, and country in the output. Use a NATURAL JOIN to produce the results
+      2. Write a query to display the last name, department number, and department name for all the employees.
+      3. Display the last name, job, department number, and the department name for all employees who work in Toronto (use table LOCATIONS)
+      4. Create a report to display employees? last name and employee number along with their manager?s last name and manager number. Label the columns Employee, Emp#, Manager, and Mgr#, respectively
+      5. Modify query no. 4 to display all employees including King, who has no manager. Order the results by the employee number.
+      6. Create a report for the HR department that displays employee last names, department numbers, and all the employees who work in the same department as a given employee prompted on screen.
+      7. Create a query that displays the name, job, department name, salary, and grade for all employees. (use table SALGRADE)
+      8. The HR department needs to find the names and hire dates of all the employees who were hired before their managers, along with their managers? names and hire dates.
+      9. Display id,city,state for city 'Manchester' (use table states and stations) Describe and check the column headings 10. Display id,city,state and location name for city .(use station and location tables)
+      11. Display stateid,statename its city and location
+      12. Display custid,name,orderdate,shipping date and total amount of order (use table customer and ord)
+      13. Display itemid its actualprice and product description. (use table item and product)
+      14. Display all orders with orderdate and total for cuutomer JOCKSPORTS (use table customer and ord)
+      
