@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Aug31.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="day-8">DAY 8</h1>
+<pre class="hljs"><code><div>PRN : <span class="hljs-number">200243020003</span>
+</div></code></pre>
+<h2 id="sub-queries-and-co-related-subqueries">Sub-queries and Co-related subqueries</h2>
+<h4 id="1-the-hr-department-wants-to-determine-the-names-of-all-the-employees-who-were-hired-after-davies-create-a-query-to-display-the-name-and-hire-date-of-any-employee-hired-after-employee-davies">1. The HR department wants to determine the names of all the employees who were hired after Davies. Create a query to display the name and hire date of any employee hired after employee Davies.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	LAST_NAME,
+	HIRE_DATE
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">WHERE</span>
+	HIRE_DATE &gt; (
+		<span class="hljs-keyword">SELECT</span>
+			HIRE_DATE
+		<span class="hljs-keyword">FROM</span>
+			EMPLOYEES
+		<span class="hljs-keyword">WHERE</span>
+			LAST_NAME = <span class="hljs-string">'Davies'</span>)
+	<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span>
+		HIRE_DATE;
+</div></code></pre>
+<h4 id="2-display-employee-details-who-earns-more-than-employee-abel">2. Display employee details who earns more than employee 'Abel'</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	LAST_NAME,
+	SALARY
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">WHERE</span>
+	SALARY &gt; (
+		<span class="hljs-keyword">SELECT</span>
+			SALARY
+		<span class="hljs-keyword">FROM</span>
+			EMPLOYEES
+		<span class="hljs-keyword">WHERE</span>
+			LAST_NAME = <span class="hljs-string">'Abel'</span>);
+</div></code></pre>
+<h4 id="3-display-empidlastnamesalaryjob-for-emloyees-working-in-department-same-as-taylor-and-earns-less-than-him">3. Display empid,last_name,salary,job for emloyees working in department same as 'Taylor' and earns less than him</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	EMPLOYEE_ID,
+	LAST_NAME,
+	SALARY
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">WHERE</span>
+	SALARY &lt; (
+		<span class="hljs-keyword">SELECT</span>
+			SALARY
+		<span class="hljs-keyword">FROM</span>
+			EMPLOYEES
+		<span class="hljs-keyword">WHERE</span>
+			LAST_NAME = <span class="hljs-string">'Taylor'</span>)
+		<span class="hljs-keyword">AND</span> DEPARTMENT_ID = (
+			<span class="hljs-keyword">SELECT</span>
+				DEPARTMENT_ID
+			<span class="hljs-keyword">FROM</span>
+				EMPLOYEES
+			<span class="hljs-keyword">WHERE</span>
+				LAST_NAME = <span class="hljs-string">'Taylor'</span>);
+</div></code></pre>
+<h4 id="4-display-employee-details-who-earns-minimum-salary">4. Display employee details who earns minimum salary</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	DEPARTMENT_ID,
+	<span class="hljs-keyword">MIN</span>(SALARY)
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span>
+	DEPARTMENT_ID;
+</div></code></pre>
+<h4 id="5-display-department-wise-deptidsalary-for-those-departments-whose-max-salary-is-more-than-10000">5. Display department-wise dept_id,salary for those departments whose max salary is more than 10000</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	DEPARTMENT_ID,
+	SALARY
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">WHERE</span>
+	SALARY &gt; <span class="hljs-keyword">ALL</span> (
+		<span class="hljs-keyword">SELECT</span>
+			<span class="hljs-keyword">MAX</span>(SALARY)
+		<span class="hljs-keyword">FROM</span>
+			EMPLOYEES
+		<span class="hljs-keyword">WHERE</span>
+			SALARY = <span class="hljs-number">10000</span>);
+</div></code></pre>
+<h4 id="6-display-empiddep-idsalary-for-those-employees-who-earn-maximum-in-his-department-eg-king-earns-highest-salary-24000-in-his-department90">6. Display empid,dep-id,salary for those employees who earn maximum in his department. Eg: king earns highest salary ($24000) in his department(90)</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	<span class="hljs-keyword">concat</span>(<span class="hljs-keyword">concat</span>(to_char(<span class="hljs-keyword">MAX</span>(SALARY), <span class="hljs-string">'$99,999'</span>), <span class="hljs-string">' in his department '</span>), DEPARTMENT_ID)
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span>
+	DEPARTMENT_ID
+<span class="hljs-keyword">HAVING</span>
+	<span class="hljs-keyword">MAX</span>(SALARY)
+	<span class="hljs-keyword">in</span>(
+		<span class="hljs-keyword">SELECT</span>
+			<span class="hljs-keyword">max</span>(SALARY)
+			<span class="hljs-keyword">FROM</span> EMPLOYEES
+		<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span>
+			DEPARTMENT_ID)
+<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span>
+	DEPARTMENT_ID;
+</div></code></pre>
+<h4 id="7-display-second-highest-salary">7. display second highest salary</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	LAST_NAME,
+	SALARY
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">WHERE</span>
+	SALARY = (
+		<span class="hljs-keyword">SELECT</span>
+			<span class="hljs-keyword">MAX</span>(SALARY)
+		<span class="hljs-keyword">FROM</span>
+			EMPLOYEES
+		<span class="hljs-keyword">WHERE</span>
+			SALARY &lt; (
+				<span class="hljs-keyword">SELECT</span>
+					<span class="hljs-keyword">MAX</span>(SALARY)
+				<span class="hljs-keyword">FROM</span>
+					EMPLOYEES));
+</div></code></pre>
+<h4 id="8-display-duplicate-employee-names">8. Display duplicate employee names</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	first_name,
+	last_name
+<span class="hljs-keyword">FROM</span>
+	employees
+	<span class="hljs-keyword">OUTER</span>
+<span class="hljs-keyword">WHERE</span>
+	<span class="hljs-number">2</span> &lt;= (
+		<span class="hljs-keyword">SELECT</span>
+			<span class="hljs-keyword">count</span>(last_name)
+		<span class="hljs-keyword">FROM</span>
+			employees
+			<span class="hljs-keyword">INNER</span>
+		<span class="hljs-keyword">WHERE</span>
+			inner.last_name = outer.last_name);
+</div></code></pre>
+<h4 id="9-display-nth-highest-salary-where-value-of-n-is-given-by-user-ie-if-user-enters-3-then-3-highest-salaries-should-be-displayed">9. Display n^th highest salary where value of 'n' is given by user (i.e if user enters 3 then, 3 highest salaries should be displayed)</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	salary
+<span class="hljs-keyword">FROM</span>
+	employees
+	<span class="hljs-keyword">OUTER</span>
+<span class="hljs-keyword">WHERE</span> (&amp; n) &gt;= (
+	<span class="hljs-keyword">SELECT</span>
+		<span class="hljs-keyword">count</span>(<span class="hljs-keyword">DISTINCT</span> inner.salary)
+	<span class="hljs-keyword">FROM</span>
+		employees
+		<span class="hljs-keyword">INNER</span>
+	<span class="hljs-keyword">WHERE</span>
+		outer.salary &lt;= inner.salary);
+</div></code></pre>
+<h4 id="10-the-hr-department-needs-a-query-that-prompts-the-user-for-an-employee-last-name-the-query-then-displays-the-last-name-and-hire-date-of-any-employee-in-the-same-department-as-the-employee-whose-name-they-supply-excluding-that-employee-for-example-if-the-user-enters-zlotkey-find-all-employees-who-work-with-zlotkey-excluding-zlotkey">10. The HR department needs a query that prompts the user for an employee last name. The query then displays the last name and hire date of any employee in the same department as the employee whose name they supply (excluding that employee). For example, if the user enters Zlotkey, find all employees who work with Zlotkey (excluding Zlotkey).</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	DEPARTMENT_ID,
+	LAST_NAME,
+	HIRE_DATE
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">WHERE</span>
+	JOB_ID <span class="hljs-keyword">in</span>(
+		<span class="hljs-keyword">SELECT</span>
+			JOB_ID <span class="hljs-keyword">FROM</span> EMPLOYEES
+		<span class="hljs-keyword">WHERE</span>
+			LAST_NAME = <span class="hljs-string">'&amp;name'</span>)
+	<span class="hljs-keyword">AND</span> LAST_NAME &lt;&gt; <span class="hljs-string">'name'</span>;
+</div></code></pre>
+<h4 id="11-create-a-report-that-displays-the-employee-number-last-name-and-salary-of-all-employees-who-earn-more-than-the-average-salary-sort-the-results-in-order-of-ascending-salary">11. Create a report that displays the employee number, last name, and salary of all employees who earn more than the average salary. Sort the results in order of ascending salary.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	EMPLOYEE_ID,
+	LAST_NAME,
+	SALARY
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">WHERE</span>
+	SALARY &gt; (
+		<span class="hljs-keyword">SELECT</span>
+			<span class="hljs-keyword">AVG</span>(SALARY)
+		<span class="hljs-keyword">FROM</span>
+			EMPLOYEES)
+	<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span>
+		SALARY;
+</div></code></pre>
+<h4 id="12-write-a-query-that-displays-the-employee-number-and-last-name-of-all-employees-who-work-in-a-department-with-any-employee-whose-last-name-contains-the-letter-u">12. Write a query that displays the employee number and last name of all employees who work in a department with any employee whose last name contains the letter ?u.?</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	EMPLOYEE_ID,
+	LAST_NAME,
+	DEPARTMENT_NAME
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES,
+	DEPARTMENTS
+<span class="hljs-keyword">WHERE</span>
+	DEPARTMENT_NAME <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'%u%'</span>;
+</div></code></pre>
+<h4 id="13-the-hr-department-needs-a-report-that-displays-the-last-name-department-number-and-job-id-of-all-employees-whose-department-location-id-is-1700">13. The HR department needs a report that displays the last name, department number, and job ID of all employees whose department location ID is 1700.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">DISTINCT</span>
+	EMPLOYEE_ID,
+	LAST_NAME,
+	LOCATION_ID
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES,
+	DEPARTMENTS
+<span class="hljs-keyword">WHERE</span>
+	LOCATION_ID = <span class="hljs-number">1700</span>;
+</div></code></pre>
+<h4 id="14-create-a-report-for-hr-that-displays-the-last-name-and-salary-of-every-employee-who-reports-to-king">14. Create a report for HR that displays the last name and salary of every employee who reports to King.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	SALARY,
+	DEPARTMENT_ID
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">WHERE</span>
+	DEPARTMENT_ID = <span class="hljs-keyword">ANY</span> (
+		<span class="hljs-keyword">SELECT</span>
+			DEPARTMENT_ID
+		<span class="hljs-keyword">FROM</span>
+			EMPLOYEES
+		<span class="hljs-keyword">WHERE</span>
+			LAST_NAME = <span class="hljs-string">'King'</span>);
+</div></code></pre>
+<h4 id="15-create-a-report-for-hr-that-displays-the-department-number-last-name-and-job-id-for-every-employee-in-the-executive-department">15. Create a report for HR that displays the department number, last name, and job ID for every employee in the Executive department.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	DEPARTMENT_ID,
+	LAST_NAME,
+	JOB_ID
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">WHERE</span>
+	DEPARTMENT_ID = (
+		<span class="hljs-keyword">SELECT</span>
+			DEPARTMENT_ID
+		<span class="hljs-keyword">FROM</span>
+			DEPARTMENTS
+		<span class="hljs-keyword">WHERE</span>
+			DEPARTMENT_NAME = <span class="hljs-string">'Executive'</span>);
+</div></code></pre>
+<h4 id="16-display-only-stateid-and-statename-for-location-under-location-toronto">16. Display only stateid and statename for location under location Toronto</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	stateid,
+	statename
+<span class="hljs-keyword">FROM</span>
+	states
+<span class="hljs-keyword">WHERE</span>
+	stateid = (
+		<span class="hljs-keyword">SELECT</span>
+			stateid
+		<span class="hljs-keyword">FROM</span>
+			states
+		<span class="hljs-keyword">WHERE</span>
+			locationid = (
+				<span class="hljs-keyword">SELECT</span>
+					locationid
+				<span class="hljs-keyword">FROM</span>
+					LOCATION
+				<span class="hljs-keyword">WHERE</span>
+					locationname = <span class="hljs-string">'TORONTO'</span>));
+</div></code></pre>
+<h4 id="17-display-statename-for-city-fredericktown%22">17. Display statename for city ''Fredericktown&quot;</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	STATE_PROVINCE <span class="hljs-keyword">AS</span> statename
+<span class="hljs-keyword">FROM</span>
+	locations
+<span class="hljs-keyword">WHERE</span>
+	city = <span class="hljs-string">'Fredericktown'</span>;
+</div></code></pre>
+<h4 id="18-write-a-query-to-display-the-last-name-department-number-and-salary-of-any-employee-whose-department-number-and-salary-both-match-the-department-number-and-salary-of-any-employee-who-earns-a-commission">18. Write a query to display the last name, department number, and salary of any employee whose department number and salary both match the department number and salary of any employee who earns a commission</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	LAST_NAME,
+	SALARY,
+	DEPARTMENT_ID
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">WHERE</span>
+	COMMISSION_PCT <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>;
+</div></code></pre>
+<h4 id="19-display-the-last-name-department-name-and-salary-of-any-employee-whose-salary-and-commission-match-the-salary-and-commission-of-any-employee-l-ocated-in-location-id-1700">19. Display the last name, department name, and salary of any employee whose salary and commission match the salary and commission of any employee l ocated in location ID 1700</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	last_name,
+	department_name,
+	salary
+<span class="hljs-keyword">FROM</span>
+	employees
+	<span class="hljs-keyword">JOIN</span> departments <span class="hljs-keyword">USING</span> (department_id)
+<span class="hljs-keyword">WHERE</span>
+	salary <span class="hljs-keyword">in</span>(
+		<span class="hljs-keyword">SELECT</span>
+			salary <span class="hljs-keyword">FROM</span> employees
+			<span class="hljs-keyword">JOIN</span> departments
+			<span class="hljs-keyword">USING</span> (department_id)
+			<span class="hljs-keyword">JOIN</span> locations
+			<span class="hljs-keyword">USING</span> (location_id)
+		<span class="hljs-keyword">WHERE</span>
+			location_id = <span class="hljs-number">1700</span>);
+</div></code></pre>
+<h4 id="20-create-a-query-to-display-the-last-name-hire-date-and-salary-for-all-employees-who-have-the-same-salary-and-commission-as-kochhar-note-do-not-display-kochhar-in-the-result-set">20. Create a query to display the last name, hire date, and salary for all employees who have the same salary and commission as Kochhar. Note: Do not display Kochhar in the result set.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	LAST_NAME,
+	HIRE_DATE,
+	SALARY
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">WHERE</span>
+	SALARY = (
+		<span class="hljs-keyword">SELECT</span>
+			SALARY
+		<span class="hljs-keyword">FROM</span>
+			EMPLOYEES
+		<span class="hljs-keyword">WHERE</span>
+			LAST_NAME = <span class="hljs-string">'Kochhar'</span>)
+		<span class="hljs-keyword">AND</span> LAST_NAME &lt;&gt; <span class="hljs-string">'Kochhar'</span>;
+</div></code></pre>
+<h4 id="21-create-a-query-to-display-the-employees-who-earn-a-salary-that-is-higher-than-the-salary-of-all-of-the-sales-managers-jobid--saman-sort-the-results-on-salary-from-highest-to-lowest">21. Create a query to display the employees who earn a salary that is higher than the salary of all of the sales managers (JOB_ID = 'SA_MAN'). Sort the results on salary from highest to lowest</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	LAST_NAME,
+	SALARY
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">WHERE</span>
+	SALARY &gt; <span class="hljs-keyword">ALL</span> (
+		<span class="hljs-keyword">SELECT</span>
+			SALARY
+		<span class="hljs-keyword">FROM</span>
+			EMPLOYEES
+		<span class="hljs-keyword">WHERE</span>
+			JOB_ID = <span class="hljs-string">'SA_MAN'</span>)
+	<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span>
+		SALARY <span class="hljs-keyword">DESC</span>;
+</div></code></pre>
+<h4 id="22-display-the-details-of-the-employee-id-last-name-and-department-id-of-those-employees-who-live-in-cities-whose-name-begins-with-t">22. Display the details of the employee ID, last name, and department ID of those employees who live in cities whose name begins with T.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	EMPLOYEE_ID,
+	LAST_NAME,
+	DEPARTMENT_ID
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEES
+<span class="hljs-keyword">WHERE</span>
+	DEPARTMENT_ID <span class="hljs-keyword">in</span>(
+		<span class="hljs-keyword">SELECT</span>
+			DEPARTMENT_ID <span class="hljs-keyword">FROM</span> DEPARTMENTS
+		<span class="hljs-keyword">WHERE</span>
+			LOCATION_ID <span class="hljs-keyword">in</span>(
+				<span class="hljs-keyword">SELECT</span>
+					LOCATION_ID <span class="hljs-keyword">FROM</span> LOCATIONS
+				<span class="hljs-keyword">WHERE</span>
+					CITY <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'T%'</span>));
+</div></code></pre>
+<h4 id="23-write-a-query-to-find-all-employees-who-earn-more-than-the-average-salary-in-their-departments-display-last-name-salary-department-id-and-the-average-salary-for-the-department-sort-by-average-salary-use-aliases-for-the-columns-retrieved-by-the-query-as-shown-in-the-sample-output">23. Write a query to find all employees who earn more than the average salary in their departments. Display last name, salary, department ID, and the average salary for the department. Sort by average salary. Use aliases for the columns retrieved by the query as shown in the sample output.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	employee_id,
+	last_name,
+	DEPARTMENT_ID,
+	salary
+<span class="hljs-keyword">FROM</span>
+	employees
+	<span class="hljs-keyword">OUTER</span>
+<span class="hljs-keyword">WHERE</span>
+	salary &gt; (
+		<span class="hljs-keyword">SELECT</span>
+			<span class="hljs-keyword">avg</span>(salary)
+		<span class="hljs-keyword">FROM</span>
+			employees
+			<span class="hljs-keyword">INNER</span>
+		<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span>
+			department_id
+		<span class="hljs-keyword">HAVING</span>
+			inner.department_id = outer.department_id)
+	<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span>
+		department_id;
+</div></code></pre>
+<h4 id="24-write-a-query-to-display-the-employee-id-last-names-and-department-names-of-all-employees-note-use-a-scalar-subquery-to-retrieve-the-department-name-in-the-select-statement">24. Write a query to display the employee ID, last names, and department names of all employees. Note: Use a scalar subquery to retrieve the department name in the SELECT statement.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	employee_id,
+	last_name,
+	department_name
+<span class="hljs-keyword">FROM</span>
+	employees
+	<span class="hljs-keyword">JOIN</span> departments <span class="hljs-keyword">USING</span> (department_id)
+<span class="hljs-keyword">WHERE</span>
+	department_id <span class="hljs-keyword">in</span>(
+		<span class="hljs-keyword">SELECT</span>
+			department_id <span class="hljs-keyword">FROM</span> departments);
+</div></code></pre>
+<h4 id="25-write-a-query-to-display-the-last-names-of-the-employees-who-have-one-or-more-coworkers-in-their-departments-with-later-hire-dates-but-higher-salaries">25. Write a query to display the last names of the employees who have one or more coworkers in their departments with later hire dates but higher salaries.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	last_name
+<span class="hljs-keyword">FROM</span>
+	employees
+	<span class="hljs-keyword">OUTER</span>
+<span class="hljs-keyword">WHERE</span>
+	department_id <span class="hljs-keyword">in</span>(
+		<span class="hljs-keyword">SELECT</span>
+			department_id <span class="hljs-keyword">FROM</span> employees
+			<span class="hljs-keyword">INNER</span>
+		<span class="hljs-keyword">WHERE</span>
+			inner.department_id = outer.department_id
+			<span class="hljs-keyword">and</span>(inner.salary &gt; outer.salary
+				<span class="hljs-keyword">AND</span> inner.hire_date &gt; outer.hire_date));
+</div></code></pre>
+
+</body>
+</html>
