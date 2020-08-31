@@ -114,3 +114,14 @@
       12. Write a query that displays the employee number and last name of all employees who work in a department with any employee whose last name contains the letter ?u.?
       13. The HR department needs a report that displays the last name, department number, and job ID of all employees whose department location ID is 1700.
       14. Create a report for HR that displays the last name and salary of every employee who reports to King.
+      15. Create a report for HR that displays the department number, last name, and job ID for every employee in the Executive department.
+      16. Display only stateid and statename for location under location Toronto
+      17. Display statename for city ''Fredericktown"
+      18. Write a query to display the last name, department number, and salary of any employee whose department number and salary both match the department number and salary of any employee who earns a commission
+      19. Display the last name, department name, and salary of any employee whose salary and commission match the salary and commission of any employee l ocated in location ID 1700
+      20. Create a query to display the last name, hire date, and salary for all employees who have the same salary and commission as Kochhar. Note: Do not display Kochhar in the result set.
+      21. Create a query to display the employees who earn a salary that is higher than the salary of all of the sales managers (JOB_ID = 'SA_MAN'). Sort the results on salary from highest to lowest
+      22. Display the details of the employee ID, last name, and department ID of those employees who live in cities whose name begins with T.
+      23. Write a query to find all employees who earn more than the average salary in their departments. Display last name, salary, department ID, and the average salary for the department. Sort by average salary. Use aliases for the columns retrieved by the query as shown in the sample output.
+      24. Write a query to display the employee ID, last names, and department names of all employees. Note: Use a scalar subquery to retrieve the department name in the SELECT statement.
+      25. Write a query to display the last names of the employees who have one or more coworkers in their departments with later hire dates but higher salaries.
