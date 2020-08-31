@@ -100,3 +100,17 @@
       13. Display itemid its actualprice and product description. (use table item and product)
       14. Display all orders with orderdate and total for cuutomer JOCKSPORTS (use table customer and ord)
       
+### Aug 31
+      1. The HR department wants to determine the names of all the employees who were hired after Davies. Create a query to display the name and hire date of any employee hired after employee Davies.
+      2. Display employee details who earns more than employee 'Abel'
+      3. Display empid,last_name,salary,job for emloyees working in department same as 'Taylor' and earns less than him 4. Display employee details who earns minimum salary
+      5. Display department-wise dept_id,salary for those departments whose max salary is more than 10000
+      6. Display empid,dep-id,salary for those employees who earn maximum in his department. Eg: king earns highest salary ($24000) in his department(90)
+      7. display second highest salary
+      8. Display duplicate employee names
+      9. Display n^th highest salary where value of 'n' is given by user (i.e if user enters 3 then, 3 highest salaries should be displayed)
+      10. The HR department needs a query that prompts the user for an employee last name. The query then displays the last name and hire date of any employee in the same department as the employee whose name they supply (excluding that employee). For example, if the user enters Zlotkey, find all employees who work with Zlotkey (excluding Zlotkey).
+      11. Create a report that displays the employee number, last name, and salary of all employees who earn more than the average salary. Sort the results in order of ascending salary.
+      12. Write a query that displays the employee number and last name of all employees who work in a department with any employee whose last name contains the letter ?u.?
+      13. The HR department needs a report that displays the last name, department number, and job ID of all employees whose department location ID is 1700.
+      14. Create a report for HR that displays the last name and salary of every employee who reports to King.
