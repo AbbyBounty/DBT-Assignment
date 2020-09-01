@@ -75,8 +75,8 @@ FROM
 ```
 
 #### 5. The HR department needs a report with the following specifications:
-###### Last name and department ID of all employees from the EMPLOYEES table, regardless of whether or not they belong to a department 
-###### Department ID and department name of all departments from the DEPARTMENTS table, regardless of whether or not they have employees working in them Write a single query to accomplish this.
+- Last name and department ID of all employees from the EMPLOYEES table, regardless of whether or not they belong to a department 
+- Department ID and department name of all departments from the DEPARTMENTS table, regardless of whether or not they have employees working in them Write a single query to accomplish this.
 ```sql
 SELECT
 	last_name,

@@ -366,35 +366,35 @@ code {
           : 'default'
     });
   </script>
-      <div class="header">
-        <div class="line">
-            <ul class="ul">
-                <li  class="red li"></li>
-                <li  class="yellow li"></li>
-                <li  class="green li"></li>
-            </ul>
-        </div>
+<div class="header">
+	<div class="line">
+		<ul class="ul">
+			<li  class="red li"></li>
+			<li  class="yellow li"></li>
+			<li  class="green li"></li>
+		</ul>
+	</div>
 
-        <div class="sql">docker exec -it oracle bash -c "source /home/oracle/.bashrc; sqlplus /nolog"
-            <br>
-            SQL*Plus: Release 12.2.0.1.0
-            <br> <br>
-            SQL> <span class="span">SELECT</span> * <span class="span"> FROM</span> DBT-ASSIGNMENT <span
-                class="span">WHERE</span> Day= <span class="day">' 9 '</span>;
-                <br>
-                <a class="nav-li"  href="/DBT-Assignment/Aug 24/Aug24.html">DAY 2</a>
-                <a class="nav-li"  href="/DBT-Assignment/Aug 25/Aug25.html">DAY 3</a>
-                <a class="nav-li" href="/DBT-Assignment/Aug 26/Aug26.html">DAY 4</a>
-                <a class="nav-li"  href="/DBT-Assignment/Aug 27/Aug27.html">DAY 5</a>
-                <a class="nav-li"   href="/DBT-Assignment/Aug 28/Aug28.html">DAY 6</a>
-                <a class="nav-li"   href="/DBT-Assignment/Aug 29/Aug29.html">DAY 7</a>
-                <a class="nav-li"   href="/DBT-Assignment/Aug 31/Aug31.html">DAY 8</a>
-                <a class="nav-li"   href="/DBT-Assignment/Sep 1/Sep1.html">DAY 9</a>
+	<div class="sql">docker exec -it oracle bash -c "source /home/oracle/.bashrc; sqlplus /nolog"
+		<br>
+		SQL*Plus: Release 12.2.0.1.0
+		<br> <br>
+		SQL> <span class="span">SELECT</span> * <span class="span"> FROM</span> DBT-ASSIGNMENT <span
+			class="span">WHERE</span> Day= <span class="day">' ? '</span>;
+			<br>
+			<a class="nav-li"  href="/DBT-Assignment/Aug 24/Aug24.html">DAY 2</a>
+			<a class="nav-li"  href="/DBT-Assignment/Aug 25/Aug25.html">DAY 3</a>
+			<a class="nav-li" href="/DBT-Assignment/Aug 26/Aug26.html">DAY 4</a>
+			<a class="nav-li"  href="/DBT-Assignment/Aug 27/Aug27.html">DAY 5</a>
+			<a class="nav-li"   href="/DBT-Assignment/Aug 28/Aug28.html">DAY 6</a>
+			<a class="nav-li"   href="/DBT-Assignment/Aug 29/Aug29.html">DAY 7</a>
+			<a class="nav-li"   href="/DBT-Assignment/Aug 31/Aug31.html">DAY 8</a>
+			<a class="nav-li"   href="/DBT-Assignment/Sep 1/Sep1.html">DAY 9</a>
 
-        </div>
+	</div>
 
-       
-    </div>
+   
+</div>
 <h1 id="day-9">DAY 9</h1>
 <pre class="hljs"><code><div>PRN : <span class="hljs-number">200243020003</span>
 </div></code></pre>
@@ -462,8 +462,10 @@ code {
 	job_history;
 </div></code></pre>
 <h4 id="5-the-hr-department-needs-a-report-with-the-following-specifications">5. The HR department needs a report with the following specifications:</h4>
-<h6 id="last-name-and-department-id-of-all-employees-from-the-employees-table-regardless-of-whether-or-not-they-belong-to-a-department">Last name and department ID of all employees from the EMPLOYEES table, regardless of whether or not they belong to a department</h6>
-<h6 id="department-id-and-department-name-of-all-departments-from-the-departments-table-regardless-of-whether-or-not-they-have-employees-working-in-them-write-a-single-query-to-accomplish-this">Department ID and department name of all departments from the DEPARTMENTS table, regardless of whether or not they have employees working in them Write a single query to accomplish this.</h6>
+<ul>
+<li>Last name and department ID of all employees from the EMPLOYEES table, regardless of whether or not they belong to a department</li>
+<li>Department ID and department name of all departments from the DEPARTMENTS table, regardless of whether or not they have employees working in them Write a single query to accomplish this.</li>
+</ul>
 <pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
 	last_name,
 	department_id,
