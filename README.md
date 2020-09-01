@@ -125,3 +125,14 @@
       23. Write a query to find all employees who earn more than the average salary in their departments. Display last name, salary, department ID, and the average salary for the department. Sort by average salary. Use aliases for the columns retrieved by the query as shown in the sample output.
       24. Write a query to display the employee ID, last names, and department names of all employees. Note: Use a scalar subquery to retrieve the department name in the SELECT statement.
       25. Write a query to display the last names of the employees who have one or more coworkers in their departments with later hire dates but higher salaries.
+
+### Sep 1
+
+Set operators
+1. The HR department needs a list of department IDs for departments that do not contain the job ID ST_CLERK. Use the set operators to create this report.
+2. The HR department needs a list of countries that have no departments located in them. Display the country ID and the name of the countries.
+3. Produce a list of jobs for departments 10, 50, and 20. Display the job ID and department ID by using the set operators.
+4. Create a report that lists the employee IDs and job IDs of those employees who currently have a job title that is the same as their job title when they were initially hired by the company (that is, they changed jobs but have now gone back to doing their original job).
+5. The HR department needs a report with the following specifications:
+Last name and department ID of all employees from the EMPLOYEES table, regardless of whether or not they belong to a department
+Department ID and department name of all departments from the DEPARTMENTS table, regardless of whether or not they have employees working in them Write a single query to accomplish this.
