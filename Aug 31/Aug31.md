@@ -444,6 +444,3 @@ WHERE
 				AND inner.hire_date > outer.hire_date));
 ```               
 
-```C
-	printf("hello");
-```
