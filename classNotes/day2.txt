@@ -1,0 +1,148 @@
+dont have data==>NULL
+
+set NULL NULL
+set NULL 0
+--------------------------
+select employee_id,last_name,salary*12 sal
+from employees;
+-----------------------------------
+select employee_id eid,last_name ename,salary*12 as Annual_sal
+from employees;
+
+------------------------------------------
+select employee_id eid,last_name ename,salary*12 as "Annual Sal"
+from employees;
+____________________________________________
+
+select employee_id,first_name||last_name
+from employees;
+--------------------------------------------------
+select employee_id,first_name||' '||last_name as "Ename"
+from employees;
+-------------------------------------------------------
+eg:: 199 Grant is working as SH_CLERK
+select employee_id,last_name||' is working as '||job_id as Job_details
+from employees;
+
+---------------------------------------------------------
+eg:: 199 Grant work's as SH_CLERK
+select employee_id,last_name||q'< work's as >'||job_id as job_details
+from employees;
+
+q'[ work's as ]'    ---> q is called as quote operator
+q'{ work's as }'
+--------------------------------------------------------
+select distinct department_id
+from employees;
+
+here, distinct is a keyword to display unique data.
+----------------------------------------------------------
+select distinct job_id,department_id
+from employees;
+
+row/tuple is not duplicated
+
+----------------------------------------------------
+    WHERE clause::
+
+
+select employee_id,last_name,department_id
+from employees
+where department_id=90;
+
+---------------------------------------------
+select employee_id,last_name,department_id
+from employees
+where last_name='King';
+
+------------------------------------------
+select employee_id,last_name,hire_date
+from employees
+where hire_date='17-FEB-96';
+------------------------------------------
+
+= is for comparison
+____________________________________________
+ques:  display details for employees earning between 2500-3500
+i.e (sal>=2500 && sal<=3500)
+
+solution::
+
+select employee_id,last_name,salary
+from employees
+where salary>=2500
+AND 
+salary<=3500;
+
+2nd way for above query:
+select employee_id,last_name,salary
+from employees
+where salary BETWEEN 2500 AND 3500;
+-------------------------------------------------
+select employee_id,last_name,salary,department_id
+from employees
+where salary>6000
+AND
+department_id=80;
+--------------------------------------------
+
+ques:: display details for employee working with manager_id 100,101,201
+(mid=100 || mid=101 || mid=201)
+solution:
+
+select employee_id,last_name,manager_id
+from employees
+where manager_id=100
+OR
+manager_id=101
+OR
+manager_id=201;
+
+2nd way for above query::
+select employee_id,last_name,manager_id
+from employees
+where manager_id IN (100,101,201);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

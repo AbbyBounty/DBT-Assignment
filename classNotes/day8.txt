@@ -1,0 +1,150 @@
+	Sub-Queries::
+
+select last_name
+from employees
+where salary >(select salary
+		from employees
+		where last_name='Abel');
+
+Ques:  Display names of employees working in "Sales" department
+Sol:
+select last_name
+from employees
+where department_id = (select department_id
+		from departments
+		where department_name='Sales');
+
+Ques::Display details of employee having same job-id as Abel but,
+earns more than Abel.
+Sol::
+select last_name,job_id,salary
+from employees
+where job_id =(select job_id
+		from employees
+		where last_name='Abel')
+AND salary >(select salary
+		from employees
+		where last_name='Abel');
+------------------------------------------------------------------
+
+select last_name,job_id,salary
+from employees
+where salary=(select min(salary)
+		from employees);
+---------------------------------------------------------------------
+Ques: Display min salary department-wis for those departments whose
+min salary is more than the min salary of department 50.
+sol:
+select department_id,min(salary)
+from employees
+group by department_id
+having min(salary) >(select min(salary)
+			from employees
+			where department_id=50); 
+-------------------------------------------------------------------
+select last_name
+from employees
+where salary >(select salary
+		from employees
+		where last_name='ABCD');
+------------------------------------------------------------------
+select last_name,department_id,salary
+from employees
+where salary =(select min(salary)
+		from employees
+		where department_id=50); 
+-----------------------------------------------------------------
+	MULTI-ROW  SUB-QUERY
+
+Ques:: Display details of employees earning same as min salary 
+amongst any department.
+Sol::
+select last_name,department_id,salary
+from employees
+where salary IN (select min(salary)
+		from employees
+		group by department_id); 
+
+----------------------------------------------------------------
+select last_name,job_id,salary
+from employees
+where job_id IN(select job_id
+		from employees
+		where last_name='Taylor')
+AND salary IN(select salary
+		from employees
+		where last_name='Taylor');
+-----------------------------------------------------------------
+		ANY operator::
+
+select employee_id,last_name,job_id,salary
+from employees
+where salary >ANY(select salary
+		from employees
+		where job_id='IT_PROG')
+AND
+job_id <> 'IT_PROG';
+
+-------------------------------------------------------------------
+select employee_id,last_name,job_id,salary
+from employees
+where salary <ANY(select salary
+		from employees
+		where job_id='IT_PROG')
+AND
+job_id <> 'IT_PROG';
+---------------------------------------------------------------------
+   =ANY means IN
+   <>ANY means NOT IN
+------------------------------------------------------------------
+
+		ALL operator::
+
+select employee_id,last_name,job_id,salary
+from employees
+where salary <ALL(select salary
+		from employees
+		where job_id='IT_PROG')
+AND
+job_id <> 'IT_PROG';
+------------------------------------------------------------------
+select employee_id,last_name,job_id,salary
+from employees
+where salary >ALL(select salary
+		from employees
+		where job_id='IT_PROG')
+AND
+job_id <> 'IT_PROG';
+----------------------------------------------------------------------
+		Correlated Sub-query
+
+select last_name,salary,department_id
+from employees e1
+where salary >( select min(salary)
+		from employees e2
+		where e2.department_id=e1.department_id)
+order by department_id;
+            ------------------OR------------------------
+select last_name,salary,department_id
+from employees e1
+where salary >( select min(salary)
+		from employees e2
+		group by department_id
+		having e2.department_id=e1.department_id)
+order by department_id;
+----------------------------------------------------------------------
+Ques::display only duplicate names from emp table
+sol::
+select first_name,last_name
+from employees e1
+where 2<=(select count(last_name)
+	 	from employees e2
+		where e2.last_name = e1.last_name);
+-------------------------------------------------------------------
+		EXISTS ::
+
+select employee_id,last_name,department_id
+from employees e1
+where EXISTS (select 'X'
+		from employees e2
+		where e2.manager_id = e1.employee_id);

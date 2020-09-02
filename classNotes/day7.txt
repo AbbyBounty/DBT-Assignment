@@ -1,0 +1,148 @@
+		EQUI-JOINS::
+---------------------------------------------------------------
+ 		USING CLAUSE::
+select employee_id,last_name,department_id,department_name
+from employees JOIN departments
+using(department_id);
+
+-----------------------------------------------------------------
+	Qualifying the columns in select::
+
+select employee_id,last_name,department_id,employees.manager_id,department_name
+from employees
+JOIN 
+departments
+using(department_id);
+           ---------------------OR--------------
+
+select employee_id,last_name,department_id,e.manager_id,department_name
+from employees e  --e and d are the table alias
+JOIN 
+departments d
+using(department_id);
+--e and d are the table alias
+------------------------------------------------------------------
+select e.employee_id,e.last_name,department_id,e.manager_id,d.department_name
+from employees e
+JOIN 
+departments d
+using(department_id);
+
+------------------------------------------------------------------------
+select empid,empname,dept_id,dname
+from emp_demo
+JOIN
+dept_demo
+ON(dept_id=deptid);
+
+select e.employee_id,e.department_id,d.department_name
+from employees e
+JOIN 
+departments d
+on(e.department_id=d.department_id);
+------------------------------------------------------------------------
+	3-Way Join::
+
+select employee_id,last_name,department_name,city
+from employees
+join 
+departments
+using(department_id)
+join 
+locations
+using(location_id);
+------------------------------------------------------------
+	Additional conditions along with JOIN::
+
+select employee_id,last_name,department_name
+from employees e
+join 
+departments d
+using(department_id)
+where e.manager_id=149;
+-----------------------------------------------------------
+		SELF-JOIN::
+
+Ques:: 
+Display emp_id,emp_name his manager_id and manager_name
+    if emp-->102 has mid-->100(manager for 102 is 100)
+   this, 100 is an emp_id for an employee 'KING'
+here,
+     emp_id,emp_name--->employees emp
+and,(mid)emp_id,(mname)emp_name--->employees mgr
+
+ON clause:: mid(emp table) is empid(mgr table)
+ for emp 102-->100(emp table)  is 100(mgr table)
+
+Query::
+select emp.employee_id "Emp#",emp.last_name "Empname",
+mgr.employee_id "Mid#",mgr.last_name "Mgrname"
+from employees emp
+join 
+employees mgr
+on(emp.manager_id=mgr.employee_id);
+------------------------------------------------------------
+
+select e.empid "Emp#",e.empname "Ename",
+m.empid "Mid",m.empname "Mname"
+from emp_demo e
+join emp_demo m
+on(e.mid = m.empid);
+-------------------------------------------------------------
+	NONEQUI-JOIN(where we check for condition NOT EQUAL)
+
+select employee_id,last_name,department_id,department_name
+from employees e
+join departments d
+using(department_id)
+where department_id<>80;
+
+select employee_id,last_name,e.manager_id,department_name
+from employees e
+join departments d
+using(department_id)
+where e.manager_id NOT IN (100,102,201);
+-----------------------------------------------------------------
+		OUTER JOIN::
+It is used to display matched data as well as UNMATCHED data
+i.e to display the left over data.
+     3 types of joins::
+     a) LEFT OUTER JOIN
+     b) RIGHT OUTER JOIN
+     c) FULL OUTER JOIN
+
+QUES:: I have to display emp and dept details for ALL employees.
+SOL::
+select empid,empname,dname
+from emp_demo 
+LEFT OUTER JOIN
+dept_demo
+on(dept_id=deptid);
+
+select employee_id,last_name,department_id,department_name
+from employees 
+LEFT OUTER JOIN 
+departments
+using(department_id);
+
+
+QUES:: Display emp details along with department details for ALL departments
+sol::
+select empid,empname,dname
+from emp_demo 
+RIGHT OUTER JOIN
+dept_demo
+on(dept_id=deptid);
+
+select empid,empname,dname
+from emp_demo 
+FULL OUTER JOIN
+dept_demo
+on(dept_id=deptid);
+-----------------------------------------------------------------------
+           CROSS JOIN::
+select empid,empname,dname
+from emp_demo 
+CROSS JOIN
+dept_demo;
+--------------------------------------------------------------------

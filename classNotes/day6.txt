@@ -1,0 +1,87 @@
+	GROUP BY clause::
+
+select max(salary)
+from employees
+group by department_id;
+
+select department_id,max(salary)
+from employees
+group by department_id;
+
+select department_id,max(salary)
+from employees
+group by department_id
+order by department_id;
+------------------------------------------------------------
+Q:: Display count of employees job-wise in every department
+sol::
+select department_id,job_id,count(employee_id)
+from employees
+group by department_id,job_id
+order by department_id;
+
+
+select department_id,job_id,max(salary)
+from employees
+group by department_id,job_id
+order by department_id;
+-----------------------------------------------------------
+Q::display job_id and sum of salary for all employees
+not having job-id REP and sum of salary is >13000
+sol::
+select job_id,sum(salary)
+from employees
+where job_id NOT LIKE '%REP%'
+group by job_id
+having sum(salary)>13000
+order by sum(salary);
+-------------------------------------------------------------
+		JOINS::
+
+1) NATURAL JOIN
+ eg:: in employees-->department_id,manager_id
+      in departments-->department_id,manager_id
+    did   mid
+     60   103
+     50   121
+     50   100
+     50   122
+
+select employee_id,last_name,manager_id,department_id,department_name
+from employees
+NATURAL JOIN
+departments;
+----------------------------------------------------------
+select employee_id,last_name,department_id,department_name
+from employees JOIN departments
+using(department_id);
+
+in above query only dept_id is used for comparision in join
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

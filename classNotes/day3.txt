@@ -1,0 +1,150 @@
+   LIKE operator
+ eg: I need to display details of employees whose name starts with 'S'
+select employee_id,last_name
+from employees
+where last_name LIKE 'S%';
+
+----------------------------------------------------------
+select employee_id,last_name
+from employees
+where last_name LIKE 'A%';
+---------------------------------------------------------
+select employee_id,last_name
+from employees
+where last_name LIKE '%s';
+--------------------------------------------------------
+eg: display last_name where 2nd letter is 'a'
+select employee_id,last_name
+from employees
+where last_name LIKE '_a%';
+--------------------------------------------------------
+select employee_id,last_name,hire_date
+from employees
+where hire_date LIKE '%AUG%';
+--------------------------------------------------------
+select employee_id,last_name,hire_date
+from employees
+where hire_date LIKE '%97';
+--------------------------------------------------------
+	IS NULL operator::
+
+select employee_id,last_name,commission_pct
+from employees
+where commission_pct IS NULL;
+--------------------------------------------------------
+select employee_id,last_name,manager_id
+from employees
+where manager_id NOT IN(100,101,201);
+---------------------------------------------------------
+     Precedence::
+select last_name,job_id,salary
+from employees
+where (job_id='SA_REP'
+OR job_id = 'AD_PRES')
+AND 
+salary>10000;
+------------------------------------------------------------
+select last_name,salary
+from employees
+where department_id=20
+order by salary;
+------------------------------------------------------
+select employee_id,last_name,salary
+from employees
+where department_id=80
+order by salary;
+---------------------------------------------------------
+select employee_id,last_name,salary
+from employees
+where department_id=80
+order by salary desc;
+----------------------------------------------------------
+select employee_id,last_name,salary*12 annual_sal
+from employees
+where department_id=80
+order by annual_sal
+--------------------------------------------------------
+select employee_id,last_name,manager_id,salary
+from employees
+where department_id=80
+order by manager_id,salary;
+------------------------------------------------------------
+select employee_id,last_name,manager_id,job_id,salary
+from employees
+where department_id=80
+order by manager_id,job_id,salary;
+----------------------------------------------------------
+select employee_id,last_name,manager_id,job_id,salary
+from employees
+order by manager_id,job_id,salary;
+---------------------------------------------------------
+select employee_id,last_name,manager_id,salary
+from employees
+order by manager_id,salary desc;
+------------------------------------------------------
+select employee_id,last_name,manager_id
+from employees
+order by 3;
+------------------------------------------------------
+		Substitution Variable::
+  syntax:: &var_name
+
+select employee_id,last_name,department_id
+from employees
+where department_id=&did;
+----------------------------------------------------
+select employee_id,last_name,department_id
+from employees
+where last_name='&name';
+-----------------------------------------------------
+select employee_id,last_name,&col1,&col2
+from employees
+where department_id=&did;
+-----------------------------------------------------
+Ques:: Accept the col_name from user to be retrived and use
+the same col_name for sorting in order by without again promting.
+solution::
+undefine col
+select employee_id,last_name,department_id,&&col
+from employees
+where department_id=&did
+order by &col;
+----------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

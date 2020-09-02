@@ -1,0 +1,162 @@
+	Convertion Functions::
+
+select to_char(sysdate,'DD MONTH YYYY')
+from dual;
+
+select to_char(sysdate,'DDth MON YEAR') "Date"
+from dual;
+
+select to_char(hire_date,'DDth MONTH YYYY') "Date"
+from employees;
+
+select to_char(hire_date,'fmDDth MONTH YYYY') "Date"
+from employees;
+
+select to_char(hire_date,'fmDDth MONTH " of " YYYY') "Date"
+from employees;
+
+select to_char(26000,'$99,999')
+from dual;
+
+select to_char(Salary,'$99,999') salary
+from employees
+where department_id=80;
+--------------------------------------------------------
+to_date('date','format') is to convert your date format to oracle
+fixed format(DD-MON-RR) i.e. to this function will explain oracl
+my specified date and it's format.
+
+select to_date('26-AUG-20','DD-MON-RR')
+from dual;
+
+select to_date('26/AUG/20','DD/MON/RR')
+from dual;
+
+select to_date('20 FEB 13','RR MON DD')
+from dual;
+-------------------------------------------------------------
+select to_number('26,000.89','99999.99')
+from dual;
+
+select to_number('26,000','99999')
+from dual;
+-------------------------------------------------------------
+	General Functions::
+
+select commission_pct, NVL(commission_pct,0)
+from employees;
+
+select salary,commission_pct,
+(salary+NVL(commission_pct,0))*12 annu_sal
+from employees
+where department_id=50;
+
+select job_id,nvl(job_id,'no job') job 
+from employees;
+-------------------------------------------------------------
+	NVL2(expr1,expr2,expr3)
+expr1 = column 
+if expr1 IS NOT NULL then O/P is expr2
+if expr1 IS NULL then O/P is expr3
+
+select commission_pct,nvl2(commission_pct,'comm','no comm') comm 
+from employees;
+
+select commission_pct,nvl2(commission_pct,1,0) comm 
+from employees;
+---------------------------------------------------------------
+	NULLIF(expr1,expr2)
+if your expr1 and expr2 is equal values then, NULL will be displayed
+else expr1 is displayed
+
+select salary,commission_pct,
+NULLIF(salary+NVL(commission_pct,0),salary) comm
+from employees;
+---------------------------------------------------------------
+	COALESCE ::like elseif
+
+select commission_pct,manager_id,
+coalesce(to_char(commission_pct),to_char(manager_id),'no comm and no manager') details
+from employees;
+-----------------------------------------------------------------
+	Conditional Expression::
+
+select employee_id,last_name,job_id,salary,
+case job_id when 'SH_CLERK' THEN (salary+1000)
+            when 'MK_MAN' then (salary+500)
+            when 'IT_PROG' then (salary+1200)
+            else (salary)
+END AS "New_sal"
+from employees;
+
+
+select employee_id,last_name,job_id,salary,
+decode(job_id,'SH_CLERK',(salary+1000),
+               'MK_MAN',(salary+500),
+               'IT_PROG',(salary+1200),
+                         salary )AS "New_sal"
+from employees;
+-------------------------------------------------------------------
+	Group Functions::
+
+select max(salary)
+from employees;
+
+select min(hire_date)
+from employees;
+---------------------------------------------------
+select count(commission_pct)
+from employees;
+
+select count(*)
+from employees;
+
+select count(department_id)
+from employees;
+
+select count(distinct department_id)
+from employees;
+----------------------------------------------------
+select avg(commission_pct) "AVG"
+from employees;
+here, comm = sum/35 b'coz only 35 emp earns comm
+
+select avg(NVL(commission_pct,0)) "AVG"
+from employees;
+here, comm = sum/107
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

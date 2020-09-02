@@ -1,0 +1,172 @@
+       Single row functions::
+
+select upper(last_name),lower(last_name)
+from employees
+where department_id=90;
+--------------------------------------------------------
+select initcap(last_name)
+from employees
+where department_id=90;
+--------------------------------------------------------
+dual -->is a dummy table and used when you actually not retrieving data from database
+
+select upper('Hello'),lower('Bye'),initcap('good morning')
+from dual;
+--------------------------------------------------------------
+select employee_id,last_name,salary
+from employees
+where lower(last_name)='king';
+---------------------------------------------------------------
+select substr('Good Morning',1,4)
+from dual;
+---------------------------------------------------------------
+select substr('Good Morning',2,4)
+from dual;
+--------------------------------------------------------------
+select substr('Good Morning',2,6)
+from dual;
+---------------------------------------------------------------
+select length('Good Morning')
+from dual;
+------------------------------------------------------------
+select instr('Good Morning','M')
+from dual;
+--------------------------------------------------------------
+select Replace('Jack and Jue','J','Bl')
+from dual;
+-----------------------------------------------------------------
+select rpad(salary,10,'*')
+from employees
+where department_id=80;
+-------------------------------------------------------------
+select trim('H' from 'Hello World')
+from dual;
+-----------------------------------------------------------
+select trim('h' from 'Hello WorldH')
+from dual;
+------------------------------------------------------------
+select trim('W' from 'Hello World')
+from dual;
+-------------------------------------------------
+select length(concat(first_name,last_name)) "Length"
+from employees;
+------------------------------------------------
+		NUMBER functions::
+
+round--> 65.87% = 66
+
+select round(65.87)
+from dual;
+ans:66
+
+select round(65.35)
+from dual;
+ans:65
+
+select round(65.35,1)
+from dual;
+ans: 65.4
+
+select round(65.358,2)
+from dual;
+ans: 65.36
+
+select round(65.358,1)
+from dual;
+ans: 65.4
+
+select round(65.358,-1)
+from dual;
+ans: 70
+
+select round(63.358,-1)
+from dual;
+ans: 60
+---------------------------------------------------------
+  TRUNC::
+
+select trunc(65.358,1)
+from dual;
+ans: 65.3
+
+select trunc(65.358,2)
+from dual;
+ans: 65.35
+
+---------------------------------------------------------
+    MOD::
+select mod(23,5)
+from dual;
+ans: 3
+
+select mod(25,5)
+from dual;
+
+ans: 0
+---------------------------------------------------------
+	Date functions::
+
+select sysdate
+from dual;
+
+
+ques: Display tne no.of weeks employee is working
+sol::
+select employee_id,(sysdate-hire_date)/7 "Weeks"
+from employees
+where department_id=90;
+
+select months_between('01-SEP-95','11-JAN-94') "Months"
+from dual;
+
+select add_months('01-SEP-95',2) "Months"
+from dual;
+ans: 01-NOV-95
+
+select add_months('21-SEP-95',2) "Months"
+from dual;
+ans: 21-NOV-95
+
+select last_day('21-SEP-95') "Last Day"
+from dual;
+ans: 30-SEP-95
+
+select last_day('21-FEB-20') "Last Day"
+from dual;
+ans: 29-FEB-20
+
+select next_day(sysdate,'Friday') "Next Day"
+from dual;
+ans: 28-AUG-20   (sysdate:: 26-AUG-20)
+---------------------------------------------------------
+	ROUND and TRUNC for date by month/year::
+
+select round(sysdate,'year')
+from dual;
+(sysdate::26-AUG-20)
+ans:: 01-JAN-21
+
+
+select round(sysdate,'month')
+from dual;
+(sysdate::26-AUG-20)
+ans:: 01-SEP-20
+
+select hire_date,round(hire_date,'year')
+from employees
+where department_id=90;
+
+select hire_date,round(hire_date,'month')
+from employees
+where department_id=90;
+
+select trunc(sysdate,'year')
+from dual;
+(sysdate::26-AUG-20)
+ans:: 01-JAN-20
+
+select trunc(sysdate,'month')
+from dual;
+(sysdate::26-AUG-20)
+ans:: 01-AUG-20
+---------------------------------------------------------
