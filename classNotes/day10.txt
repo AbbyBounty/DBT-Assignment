@@ -1,0 +1,129 @@
+		DDL::
+
+create table employee(emp_id number);
+---------------------------------------------------------
+
+varchar(20)-->space of 20 char will be allocated and if i store
+a string of length 12 then remaining space will be wasted
+varchar2(20)-->pace of 20 char will be considered and if i store
+a string of length 12 then space for only 12 char is allocated
+
+create table employee(emp_id number(5),ename varchar2(30), 
+join_date date,salary number);
+-----------------------------------------------------------
+
+create table employee(emp_id number(5),ename varchar2(30),
+join_date date DEFAULT sysdate);
+---------------------------------------------------------------
+			DML:: (INSERT)
+
+insert into employee
+values(11,'Tom','12-JUL-15');
+-----------------------------------------------
+insert into employee
+values(12,'Sam',default);
+--------------------------------------------------
+insert into employee(emp_id,ename)
+values(13,'Harry');
+-----------------------------------------------
+insert into employee(ename,join_date,emp_id)
+values('Jerry','21-Mar-12',14);
+------------------------------------------------------
+insert into employee
+values(15,'Sam',to_date('11 January,05','DD MONTH,RR'));
+-------------------------------------------------------------
+insert into employee
+values(&eid,'&name','&jdate');
+----------------------------------------------------------
+Ques:Inserting values from one existing table into other
+existing table
+OR
+insert using sub-query (i.e. without values clause)
+sol::
+insert into employee(emp_id,ename,join_date)
+select employee_id,first_name||' '||last_name,hire_date
+from employees
+where department_id=90;
+-------------------------------------------------------------
+			TCL::
+  commit;
+to make changes permanent in your table/database
+it will commit (i.e.save) all DML operations preceding it,
+till,
+      1) last commit is encountered
+      2) encounters any DDL statement
+      3) it encounters any savepoint
+
+    rollback;
+to not save changes permanently in database
+it will rollback(undo) all DML operations preceding it,
+till,
+	1) last commit or last rollback
+	2) encounters any DDL statement
+      	3) it encounters any savepoint
+-----------------------------------------------------------------
+           Continue DML :: (update)
+
+update employee
+set salary=1000;
+--here, = is assignment
+----------------------------------------------------------------
+
+update employee
+set salary=1000
+where ename='Tom';
+-----------------------------------------
+update employee
+set salary=3000
+where ename='Sam';
+-----------------------------------------
+update employee
+set salary=3000
+where emp_id=12;
+----------------------------------------
+update employee
+set salary=&sal
+where emp_id=&eid;
+
+commit;
+------------------------------------
+		update multiple columns of same row
+update employee
+set salary=&sal,
+job_id = '&jid'
+where emp_id=&eid;
+
+commit;
+------------------------------------------------
+update employee
+set salary=(select salary
+	   from employees
+	   where employee_id=100)
+where emp_id=100;
+
+commit;
+--------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
