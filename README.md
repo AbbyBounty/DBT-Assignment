@@ -136,3 +136,14 @@
       5. The HR department needs a report with the following specifications:
       Last name and department ID of all employees from the EMPLOYEES table, regardless of whether or not they belong to a department
       Department ID and department name of all departments from the DEPARTMENTS table, regardless of whether or not they have employees working in them Write a single query to accomplish this.
+
+### Sep 2
+      1. Run the statement to build the MY_EMPLOYEE table to be used for the lab.
+      2. "Add the first row of data to the MY_EMPLOYEE table . Do not list the columns in the INSERT clause.Make the data additions permanent."
+      3. Populate the MY_EMPLOYEE table with the second row of sample data from the preceding list. This time, list the columns explicitly in the INSERT clause
+      4. Write an INSERT statement in a text file named loademp.sql to load rows into the MY_EMPLOYEE table. Concatenate the first letter of the first name and the f irst seven characters of the last name to produce the user ID.
+      5. Change the last name of employee 3 to Drexler
+      6. Change the salary to 1000 for all employees with a salary less t han 900.Verify your changes to the table.
+      7. Delete an employee from the MY_EMPLOYEE table. Prompt user on screen for first_name
+      8. Try all these:: Mark an intermediate point in the processing of the transaction. Empty the entire table.Confirm that the table is empty.
+      9. Discard the most recent DELETE operation without discarding the earlier INSERT operation.Confirm that the new row is still intact
