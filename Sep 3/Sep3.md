@@ -4,9 +4,8 @@
 ```C
 PRN : 200243020003
 ```
-
-Creating and managing tables and adding constraints
-1. Create table copy_emp same as employees table
+## Creating and managing tables and adding constraints
+#### 1. Create table copy_emp same as employees table
 2. Populate the DEPT table with data from the DEPARTMENTS table. Include only columns that you need
 3. Create table EMP and add all necessary constraints.Include only the EMPLOYEE_ID, FIRST_NAME, LAST_NAME, SALARY, and DEPARTMENT_ID columns. Name the columns in your new table ID, FIRST_NAME, LAST_NAME, SALARY , and DEPT_ID, respectively.
 4. Truncate table EMP
