@@ -61,16 +61,20 @@ CREATE TABLE dept (
 );
 ```
 #### 8. Modify the EMP table to allow for longer employee last names. Confirm your mod ification.
+```sql
 ALTER TABLE emp MODIFY (last_name VARCHAR2 (50));
 
 DESCRIBE emp;
+```
 #### 9. Confirm that both the DEPT and EMP tables are stored in the data dictionary. (Hint: USER_TABLES)
+```sql
 SELECT
 	table_name
 FROM
 	user_tables
 WHERE
 	table_name IN(DEPT, EMP);
+```
 #### 10. Drop the FIRST_NAME column from the EMP table. Confirm your modification by checking the description of the table.
 ALTER TABLE emp DROP COLUMN FIRST_NAME;
 
