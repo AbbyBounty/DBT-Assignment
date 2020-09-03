@@ -6,26 +6,32 @@ PRN : 200243020003
 ```
 ## Creating and managing tables and adding constraints
 #### 1. Create table copy_emp same as employees table
+```sql
 CREATE TABLE copy_emp AS
 SELECT
 	*
 FROM
 	EMPLOYEE;
+```
 #### 2. Populate the DEPT table with data from the DEPARTMENTS table. Include only columns that you need
+```sql
 CREATE TABLE dept AS
 SELECT
 	DEPARTMENT_ID,
 	DEPARTMENT_NAME
 FROM
 	DEPARTMENTS;
+```
 
 #### 3. Create table EMP and add all necessary constraints.Include only the EMPLOYEE_ID, FIRST_NAME, LAST_NAME, SALARY, and DEPARTMENT_ID columns. Name the columns in your new table ID, FIRST_NAME, LAST_NAME, SALARY , and DEPT_ID, respectively.
+```sql
 CREATE TABLE emp (
 	EMPLOYEE_ID NUMBER CONSTRAINT e_id PRIMARY KEY,
 	FIRST_NAME VARCHAR2 (30),
 	LAST_NAME VARCHAR2 (30),
 	SALARY NUMBER,
 	DEPARTMENT_ID NUMBER
+```
 #### 4. Truncate table EMP
 TRUNCATE TABLE EMP;
 #### 5. Drop the EMP table
