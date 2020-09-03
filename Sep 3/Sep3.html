@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sep3.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="day-11">DAY 11</h1>
+<pre class="hljs"><code><div>PRN : <span class="hljs-number">200243020003</span>
+</div></code></pre>
+<h2 id="creating-and-managing-tables-and-adding-constraints">Creating and managing tables and adding constraints</h2>
+<h4 id="1-create-table-copyemp-same-as-employees-table">1. Create table copy_emp same as employees table</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> copy_emp <span class="hljs-keyword">AS</span>
+<span class="hljs-keyword">SELECT</span>
+	*
+<span class="hljs-keyword">FROM</span>
+	EMPLOYEE;
+</div></code></pre>
+<h4 id="2-populate-the-dept-table-with-data-from-the-departments-table-include-only-columns-that-you-need">2. Populate the DEPT table with data from the DEPARTMENTS table. Include only columns that you need</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> dept <span class="hljs-keyword">AS</span>
+<span class="hljs-keyword">SELECT</span>
+	DEPARTMENT_ID,
+	DEPARTMENT_NAME
+<span class="hljs-keyword">FROM</span>
+	DEPARTMENTS;
+</div></code></pre>
+<h4 id="3-create-table-emp-and-add-all-necessary-constraintsinclude-only-the-employeeid-firstname-lastname-salary-and-departmentid-columns-name-the-columns-in-your-new-table-id-firstname-lastname-salary--and-deptid-respectively">3. Create table EMP and add all necessary constraints.Include only the EMPLOYEE_ID, FIRST_NAME, LAST_NAME, SALARY, and DEPARTMENT_ID columns. Name the columns in your new table ID, FIRST_NAME, LAST_NAME, SALARY , and DEPT_ID, respectively.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> emp (
+	EMPLOYEE_ID <span class="hljs-built_in">NUMBER</span> <span class="hljs-keyword">CONSTRAINT</span> e_id PRIMARY <span class="hljs-keyword">KEY</span>,
+	FIRST_NAME <span class="hljs-built_in">VARCHAR2</span> (<span class="hljs-number">30</span>),
+	LAST_NAME <span class="hljs-built_in">VARCHAR2</span> (<span class="hljs-number">30</span>),
+	SALARY <span class="hljs-built_in">NUMBER</span>,
+	DEPARTMENT_ID <span class="hljs-built_in">NUMBER</span>
+</div></code></pre>
+<h4 id="4-truncate-table-emp">4. Truncate table EMP</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">TRUNCATE</span> <span class="hljs-keyword">TABLE</span> EMP;
+</div></code></pre>
+<h4 id="5-drop-the-emp-table">5. Drop the EMP table</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> EMP;
+</div></code></pre>
+<h4 id="6-now-again-create-table-empadd-a-table-level-primary-key-constraint-to-the-emp-table-on-the-id-column-the-constraint-should-be-named-at-creation-name-the-constraint-myempidpk">6. Now again create table EMP.Add a table-level PRIMARY KEY constraint to the EMP table on the ID column. The constraint should be named at creation. Name the constraint my_emp_id_pk.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> emp (
+	EMPLOYEE_ID <span class="hljs-built_in">NUMBER</span>,
+	FIRST_NAME <span class="hljs-built_in">VARCHAR2</span> (<span class="hljs-number">30</span>),
+	LAST_NAME <span class="hljs-built_in">VARCHAR2</span> (<span class="hljs-number">30</span>),
+	SALARY <span class="hljs-built_in">NUMBER</span>,
+	DEPARTMENT_ID <span class="hljs-built_in">NUMBER</span>,
+	<span class="hljs-keyword">CONSTRAINT</span> my_emp_id_pk PRIMARY <span class="hljs-keyword">KEY</span> (EMPLOYEE_ID)
+);
+</div></code></pre>
+<h4 id="7-create-a-primary-key-constraint-to-the-dept-table-using-the-id-column-the-constraint-should-be-named-at-creation-name-the-constraint-mydeptidpk">7. Create a PRIMARY KEY constraint to the DEPT table using the ID column. The constraint should be named at creation. Name the constraint my_deptid_pk.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> dept (
+	<span class="hljs-keyword">id</span> <span class="hljs-built_in">NUMBER</span> <span class="hljs-keyword">CONSTRAINT</span> my_deptid_pk PRIMARY <span class="hljs-keyword">KEY</span>
+);
+</div></code></pre>
+<h4 id="8-modify-the-emp-table-to-allow-for-longer-employee-last-names-confirm-your-mod-ification">8. Modify the EMP table to allow for longer employee last names. Confirm your mod ification.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> emp <span class="hljs-keyword">MODIFY</span> (last_name <span class="hljs-built_in">VARCHAR2</span> (<span class="hljs-number">50</span>));
+
+<span class="hljs-keyword">DESCRIBE</span> emp;
+</div></code></pre>
+<h4 id="9-confirm-that-both-the-dept-and-emp-tables-are-stored-in-the-data-dictionary-hint-usertables">9. Confirm that both the DEPT and EMP tables are stored in the data dictionary. (Hint: USER_TABLES)</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	table_name
+<span class="hljs-keyword">FROM</span>
+	user_tables
+<span class="hljs-keyword">WHERE</span>
+	table_name <span class="hljs-keyword">IN</span>(DEPT, EMP);
+</div></code></pre>
+<h4 id="10-drop-the-firstname-column-from-the-emp-table-confirm-your-modification-by-checking-the-description-of-the-table">10. Drop the FIRST_NAME column from the EMP table. Confirm your modification by checking the description of the table.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> emp <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">COLUMN</span> FIRST_NAME;
+
+<span class="hljs-keyword">DESCRIBE</span> emp;
+</div></code></pre>
+<h4 id="11-add-a-column-deptid-to-the-emp-table-add-a-foreign-key-reference-on-the-emp-table-that-ensures-that-the-employee-is-not-assigned-to-a-nonexistent-depar-tment-name-the-constraint-myempdeptidfk">11. Add a column DEPT_ID to the EMP table. Add a foreign key reference on the EMP table that ensures that the employee is not assigned to a nonexistent depar tment. Name the constraint my_emp_dept_id_fk.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> emp
+	<span class="hljs-keyword">ADD</span> (dept_id <span class="hljs-built_in">NUMBER</span> (<span class="hljs-number">7</span>));
+
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> emp
+	<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> my_emp_dept_id_fk <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (dept_id) <span class="hljs-keyword">REFERENCES</span> dept (<span class="hljs-keyword">id</span>);
+</div></code></pre>
+<h4 id="12-confirm-that-the-constraints-were-added-by-querying-the-userconstraints-view-note-the-types-and-names-of-the-constraints">12. Confirm that the constraints were added by querying the USER_CONSTRAINTS view. Note the types and names of the constraints.</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	constraint_name,
+	constraint_type
+<span class="hljs-keyword">FROM</span>
+	user_constraints
+<span class="hljs-keyword">WHERE</span>
+	table_name <span class="hljs-keyword">IN</span>(EMP, DEPT);
+</div></code></pre>
+<h4 id="13-display-the-object-names-and-types-from-the-userobjects-data-dictionary-view-for-the-emp-and-dept-tables-notice-that-the-new-tables-and-a-new-index-were-created">13. Display the object names and types from the USER_OBJECTS data dictionary view for the EMP and DEPT tables. Notice that the new tables and a new index were created</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">SELECT</span>
+	object_name,
+	object_type
+<span class="hljs-keyword">FROM</span>
+	user_objects
+<span class="hljs-keyword">WHERE</span>
+	object_name <span class="hljs-keyword">LIKE</span> EMP %
+	<span class="hljs-keyword">OR</span> object_name <span class="hljs-keyword">LIKE</span> DEPT %;
+</div></code></pre>
+<h4 id="14-modify-the-emp-table-add-a-commission-column-of-number-data-type-precision-2-scale-2-add-a-constraint-to-the-commission-column-that-ensures-that-a-co-mmission-value-is-greater-than-zero">14. Modify the EMP table. Add a COMMISSION column of NUMBER data type, precision 2, scale 2. Add a constraint to the commission column that ensures that a co mmission value is greater than zero</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> EMP
+	<span class="hljs-keyword">ADD</span> commission <span class="hljs-built_in">NUMBER</span> (<span class="hljs-number">2</span>, <span class="hljs-number">2</span>) <span class="hljs-keyword">CONSTRAINT</span> my_emp_comm_ck <span class="hljs-keyword">CHECK</span> (commission &gt;= <span class="hljs-number">0</span>;
+</div></code></pre>
+
+</body>
+</html>
