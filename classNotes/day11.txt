@@ -1,0 +1,137 @@
+		DML continued::
+
+delete employee
+where emp_id=11;
+---------------------------------------------------
+insert into 
+  (select emp_id,ename,join_date,job_id,salary
+	from employee
+	where job_id ='HR')
+values(20,'Jack',sysdate,'IT',2000);
+--------------------------------------------------------
+merge into employee e1
+using employees e2
+on(e1.emp_id = e2.employee_id)
+WHEN MATCHED THEN
+  Update set
+  salary=20000
+when not matched then
+  insert values(e2.employee_id,e2.last_name,
+e2.hire_date,e2.salary,e2.job_id);
+-----------------------------------------------------------
+
+insert 2 rows
+marking i.e. savepoint
+
+update 1 row
+ marking i.e. savepoint
+
+delete 1 row
+marking i.e. savepoint
+now,
+
+I dont want to commit this delete
+rollback to B;
+
+but, I want to update i.e. commit
+commit;
+--------------------------------------------------------------
+		DDL continued::
+(ALL DDL statements are AUTO-COMMIT)
+
+create table dept20
+AS
+   select employee_id,last_name,department_id
+   from employees
+   where department_id=20;
+---------------------------------------------------------
+create table dept30(eid,name,did)
+AS
+   select employee_id,last_name,department_id
+   from employees
+   where department_id=30;
+--------------------------------------------------------
+drop table dept30;  
+--(delete, drop, truncate)
+
+delete:: will delete 1 row or multiple rows but,
+this is DML so u have commit/rollback explicitly.
+
+drop:: will delete table from memory. DDL so cannot rollback;
+and it will save table in recycle-bin
+
+drop table tab_nam purge:: (shift+del) i.e. table is not even
+in the recycle-bin
+
+truncate:: DDL stmt which delete all rows from table i.e.
+it will empty your table. But, the table structure will be intact
+in the memory of database.
+
+
+select original_name,type,createtime,droptime
+from recyclebin
+where lower(original_name) like 'dept%';
+------------------------------------------------------------------
+column level constraint::
+
+create table department(
+deptid number constraint dept_pk primary key,
+dname varchar2(20) constraint dept_nl not null,
+location varchar2(20));
+-------------------------------------------------------
+table-level constraint::
+
+create table department(
+deptid number ,
+dname varchar2(20) constraint dept_nl not null,
+location varchar2(20),
+constraint dept_pk primary key(deptid));
+---------------------------------------------------------
+
+create table employee(
+empid number constraint emp_pk primary key,
+ename varchar2(20) constraint emp_nl not null,
+hire_date date default sysdate,
+job_id varchar2(20),
+salary number constraint emp_sal check(salary>=1000),
+email_id varchar2(20) constraint emp_email unique,
+dept_id number constraint emp_fk references department(deptid) );
+
+-------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
