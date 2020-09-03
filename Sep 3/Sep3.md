@@ -100,6 +100,7 @@ WHERE
 	table_name IN(EMP, DEPT);
 ```
 #### 13. Display the object names and types from the USER_OBJECTS data dictionary view for the EMP and DEPT tables. Notice that the new tables and a new index were created
+```sql
 SELECT
 	object_name,
 	object_type
@@ -108,6 +109,9 @@ FROM
 WHERE
 	object_name LIKE EMP %
 	OR object_name LIKE DEPT %;
+```
 #### 14. Modify the EMP table. Add a COMMISSION column of NUMBER data type, precision 2, scale 2. Add a constraint to the commission column that ensures that a co mmission value is greater than zero
+```sql
 ALTER TABLE EMP
 	ADD commission NUMBER (2, 2) CONSTRAINT my_emp_comm_ck CHECK (commission >= 0;
+```   
