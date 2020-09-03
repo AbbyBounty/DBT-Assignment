@@ -33,10 +33,17 @@ CREATE TABLE emp (
 	DEPARTMENT_ID NUMBER
 ```
 #### 4. Truncate table EMP
+```sql
 TRUNCATE TABLE EMP;
+```
+
 #### 5. Drop the EMP table
+```sql
 DROP TABLE EMP;
+```
+
 #### 6. Now again create table EMP.Add a table-level PRIMARY KEY constraint to the EMP table on the ID column. The constraint should be named at creation. Name the constraint my_emp_id_pk.
+```sql
 CREATE TABLE emp (
 	EMPLOYEE_ID NUMBER,
 	FIRST_NAME VARCHAR2 (30),
@@ -45,10 +52,14 @@ CREATE TABLE emp (
 	DEPARTMENT_ID NUMBER,
 	CONSTRAINT my_emp_id_pk PRIMARY KEY (EMPLOYEE_ID)
 );
+```
+
 #### 7. Create a PRIMARY KEY constraint to the DEPT table using the ID column. The constraint should be named at creation. Name the constraint my_deptid_pk.
+```sql
 CREATE TABLE dept (
 	id NUMBER CONSTRAINT my_deptid_pk PRIMARY KEY
 );
+```
 #### 8. Modify the EMP table to allow for longer employee last names. Confirm your mod ification.
 ALTER TABLE emp MODIFY (last_name VARCHAR2 (50));
 
