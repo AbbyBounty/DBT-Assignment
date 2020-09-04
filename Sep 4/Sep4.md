@@ -38,7 +38,9 @@ SELECT
 FROM
 	emp_vu;
 ```
+
 #### 4. Create a view named DEPT50 that contains the employee numbers, employee last names, and department numbers for all employees in department 50. Label the view columns EMPNO, EMPLOYEE, and DEPTNO. Do not allow an employee to be reassigned to another department through the view
+```sql
 CREATE VIEW dept50 (
 	empno,
 	EMPLOYEE,
@@ -56,8 +58,10 @@ SELECT
 	*
 FROM
 	dept50;
+```
 
 #### 5. Create a view called SALARY_VU based on the employee last names, department names, salaries, and salary grades for all employees. Use the EMPLOYEES, DEPARTMENTS, and JOB_GRADES tables. Label the columns Employee, Department, Salary, and Grade, respectively.
+```sql
 CREATE VIEW salary_vu (
 	EMPLOYEE,
 	DEPARTMENT,
@@ -74,7 +78,7 @@ SELECT
 	*
 FROM
 	salary_vu;
-
+```
 
 
 
