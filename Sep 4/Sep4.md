@@ -24,18 +24,20 @@ FROM
 	emp_vu;
 ```
 #### 2. Select the view name and text from the USER_VIEWS data dictionary view.
+```sql
 SELECT
 	VIEW_NAME
 FROM
 	USER_VIEWS;
-
+```
 #### 3. Using your EMPLOYEES_VU view, enter a query to display all employee names and department numbers.
+```sql
 SELECT
 	EMPLOYEE,
 	DEPARTMENT_ID
 FROM
 	emp_vu;
-
+```
 #### 4. Create a view named DEPT50 that contains the employee numbers, employee last names, and department numbers for all employees in department 50. Label the view columns EMPNO, EMPLOYEE, and DEPTNO. Do not allow an employee to be reassigned to another department through the view
 CREATE VIEW dept50 (
 	empno,
