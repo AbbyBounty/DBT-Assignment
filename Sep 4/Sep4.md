@@ -6,6 +6,7 @@ PRN : 200243020003
 
 ### Views
 #### 1. Create a view called EMPLOYEES_VU based on the employee numbers, employee names, and department numbers from the EMPLOYEES table. Change the heading for the employee name to EMPLOYEE.Display the contents of the EMPLOYEES_VU view. 
+```sql
 CREATE VIEW emp_vu (
 	EMPLOYEE_ID,
 	EMPLOYEE,
@@ -21,7 +22,7 @@ SELECT
 	*
 FROM
 	emp_vu;
-
+```
 #### 2. Select the view name and text from the USER_VIEWS data dictionary view.
 SELECT
 	VIEW_NAME
