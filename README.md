@@ -172,3 +172,11 @@
             3. Using your EMPLOYEES_VU view, enter a query to display all employee names and department numbers.
             4. Create a view named DEPT50 that contains the employee numbers, employee last names, and department numbers for all employees in department 50. Label the view columns EMPNO, EMPLOYEE, and DEPTNO. Do not allow an employee to be reassigned to another department through the view
             5. Create a view called SALARY_VU based on the employee last names, department names, salaries, and salary grades for all employees. Use the EMPLOYEES, DEPARTMENTS, and JOB_GRADES tables. Label the columns Employee, Department, Salary, and Grade, respectively. 
+
+
+### Sep 5
+            1. Create a sequence to be used with the primary key column of the DEPT table. The sequence should start at 200 and have a maximum value of 1000. Have your sequence increment by ten numbers. Name the sequence DEPT_ID_SEQ
+            2. Write a query in a script to display the following information about your sequences: sequence name, maximum value, increment size, and last number. Name the script lab13_2.sql. Run the statement in your script
+            3. Write a script to insert two rows into the DEPT table. Name your script lab13_3.sql. Be sure to use the sequence that you created for the ID column. Add two departments named Education and Administration. Confirm your additions. Run the commands in your script
+            4. Display the indexes and uniqueness that exist in the data dictionary for the EMP table.
+            5. Create a nonunique index on the foreign key column (DEPT_ID) in the EMP table.
