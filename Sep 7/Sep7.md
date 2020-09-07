@@ -83,13 +83,59 @@ BEGIN
 
 END;
 #### 7. Create PL/SQL block to accept no. from user and check if it is armstrong no. or not
-
+DECLARE
+	n NUMBER: = 153;
+	rem NUMBER;
+	sum NUMBER: = 0;
+	T NUMBER: = n;
+BEGIN
+	while n > 0 LOOP
+		rem: = mod(n, 10);
+		sum: = sum + power(rem, 3);
+		n: = trunc(n / 10);
+	END LOOP;
+	IF T = SUM THEN
+		DBMS_OUTPUT.PUT_LINE ('Number is  ARMSTRONG ');
+	ELSE
+		DBMS_OUTPUT.PUT_LINE ('Number is NOT ARMSTRONG ');
+	END IF;
+END;
 #### 8. Create PL/SQL block to accept radius and calculate and display area and circumference of circle
-
+DECLARE
+	r NUMBER: = 5;
+	a number;
+	c number;
+BEGIN
+	a: = 3.14 * r * r;
+	c: = 2 * 3.14 * r;
+	DBMS_OUTPUT.PUT_LINE ('area ' || a || ' Circumference ' || c);
+END;
 #### 9. Create PL/SQL block to accept no. and check if it is even or odd
-
+DECLARE
+	n NUMBER: = 9;
+BEGIN
+	IF mod(n, 2) = 0 THEN
+		DBMS_OUTPUT.PUT_LINE ('Even ');
+	ELSE
+		DBMS_OUTPUT.PUT_LINE ('ODD ');
+	END IF;
+END;
 #### 10. Create PL/SQL block to display details of the employee who do not have manager.
-
+DECLARE
+	ename varchar2 (30);
+	emp_id number;
+BEGIN
+	SELECT
+		last_name,
+		employee_id INTO ename,
+		emp_id
+	FROM
+		employees
+	WHERE
+		manager_id IS NULL;
+	DBMS_OUTPUT.PUT_LINE ('Name: ' || ename);
+	DBMS_OUTPUT.PUT_LINE ('Employee ID:  ' || emp_id);
+END;
 ## Cursors
 
 #### 1. Create PL/SQL block to display details of employees King
@@ -138,62 +184,16 @@ END;
 
 
 --7
-DECLARE
-	n NUMBER: = 153;
-	rem NUMBER;
-	sum NUMBER: = 0;
-	T NUMBER: = n;
-BEGIN
-	while n > 0 LOOP
-		rem: = mod(n, 10);
-		sum: = sum + power(rem, 3);
-		n: = trunc(n / 10);
-	END LOOP;
-	IF T = SUM THEN
-		DBMS_OUTPUT.PUT_LINE ('Number is  ARMSTRONG ');
-	ELSE
-		DBMS_OUTPUT.PUT_LINE ('Number is NOT ARMSTRONG ');
-	END IF;
-END;
+
 
 --8
-DECLARE
-	r NUMBER: = 5;
-	a number;
-	c number;
-BEGIN
-	a: = 3.14 * r * r;
-	c: = 2 * 3.14 * r;
-	DBMS_OUTPUT.PUT_LINE ('area ' || a || ' Circumference ' || c);
-END;
+
 
 --9
-DECLARE
-	n NUMBER: = 9;
-BEGIN
-	IF mod(n, 2) = 0 THEN
-		DBMS_OUTPUT.PUT_LINE ('Even ');
-	ELSE
-		DBMS_OUTPUT.PUT_LINE ('ODD ');
-	END IF;
-END;
+
 
 --10
-DECLARE
-	ename varchar2 (30);
-	emp_id number;
-BEGIN
-	SELECT
-		last_name,
-		employee_id INTO ename,
-		emp_id
-	FROM
-		employees
-	WHERE
-		manager_id IS NULL;
-	DBMS_OUTPUT.PUT_LINE ('Name: ' || ename);
-	DBMS_OUTPUT.PUT_LINE ('Employee ID:  ' || emp_id);
-END;
+
 
 ------------------------
 --1
