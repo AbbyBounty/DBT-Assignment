@@ -433,7 +433,10 @@ BEGIN
 	END LOOP;
 	CLOSE emp_did;
 END;
+```
+
 #### 9. Create PL/SQL block to display employees who have changed their job atleast once
+```sql
 DECLARE
 	ename varchar2 (30);
 	emp_id number;
@@ -468,7 +471,10 @@ BEGIN
 	END LOOP;
 	CLOSE emp_did;
 END;
+```
+
 #### 10. Create PL/SQL block to details of employees earning salary in range 10000 to 20000
+```sql
 DECLARE
 	ename varchar2 (30);
 	emp_id number;
@@ -495,3 +501,4 @@ BEGIN
 	END LOOP;
 	CLOSE emp_did;
 END;
+```
