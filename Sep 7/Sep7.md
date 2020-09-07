@@ -248,6 +248,7 @@ BEGIN
 END;
 ```
 #### 4. Create PL/SQL block to display highest salary from each department 
+```sql
 DECLARE
 	emp_id number;
 	sal number;
@@ -283,8 +284,10 @@ BEGIN
 	END LOOP;
 	CLOSE emp_did;
 END;
+```
 
 #### 5. Create PL/SQL block to display details of employees earning highest salary in their department
+```sql
 DECLARE
 	ename varchar2 (30);
 	emp_id number;
