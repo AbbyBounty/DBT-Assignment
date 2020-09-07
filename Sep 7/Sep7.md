@@ -5,10 +5,13 @@ PRN : 200243020003
 ```
 ## Anonymous Block
 #### 1. Create and execute a simple anonymous block that outputs ?Hello World.?
+```sql
 BEGIN
 	dbms_output.put_line ('hello world');
 END;
+```
 #### 2. Create and execute a simple anonymous block to display highest salary among-st employees
+```sql
 DECLARE
 	SALARY NUMBER;
 BEGIN
@@ -18,7 +21,9 @@ BEGIN
 		EMPLOYEES;
 	dbms_output.put_line (SALARY);
 END;
+```
 #### 3. Create PL/SQL block to display details of the employee who earns highest salary
+```sql
 DECLARE
 	FIRST_NAME VARCHAR2 (20);
 	LAST_NAME VARCHAR2 (30);
@@ -40,7 +45,9 @@ BEGIN
 				EMPLOYEES);
 	dbms_output.put_line (FIRST_NAME || ' ' || LAST_NAME || ' ' || SALARY);
 END;
+```
 #### 4. Create PL/SQL block to display the details for user entered employee_id
+```sql
 DECLARE
 	FIRST_NAME VARCHAR2 (30);
 BEGIN
@@ -52,7 +59,9 @@ BEGIN
 		EMPLOYEE_ID = :id;
 	dbms_output.put_line (FIRST_NAME);
 END;
+```
 #### 5. Create PL/SQL block to display details nos. 1 to 10
+```sql
 DECLARE
 	n number;
 BEGIN
@@ -62,7 +71,9 @@ BEGIN
 		n := n + 1;
 	END LOOP;
 END;
+```
 #### 6. Create block to accept no. from user and check if it is Prime or Not and display message accordingly
+```sql
 DECLARE
 	n NUMBER;
 	i NUMBER: = 2;
@@ -82,7 +93,9 @@ BEGIN
 				END;
 
 END;
+```
 #### 7. Create PL/SQL block to accept no. from user and check if it is armstrong no. or not
+```sql
 DECLARE
 	n NUMBER: = 153;
 	rem NUMBER;
@@ -100,7 +113,9 @@ BEGIN
 		DBMS_OUTPUT.PUT_LINE ('Number is NOT ARMSTRONG ');
 	END IF;
 END;
+```
 #### 8. Create PL/SQL block to accept radius and calculate and display area and circumference of circle
+```sql
 DECLARE
 	r NUMBER: = 5;
 	a number;
@@ -110,7 +125,9 @@ BEGIN
 	c: = 2 * 3.14 * r;
 	DBMS_OUTPUT.PUT_LINE ('area ' || a || ' Circumference ' || c);
 END;
+```
 #### 9. Create PL/SQL block to accept no. and check if it is even or odd
+```sql
 DECLARE
 	n NUMBER: = 9;
 BEGIN
@@ -120,7 +137,9 @@ BEGIN
 		DBMS_OUTPUT.PUT_LINE ('ODD ');
 	END IF;
 END;
+```
 #### 10. Create PL/SQL block to display details of the employee who do not have manager.
+```sql
 DECLARE
 	ename varchar2 (30);
 	emp_id number;
@@ -136,10 +155,11 @@ BEGIN
 	DBMS_OUTPUT.PUT_LINE ('Name: ' || ename);
 	DBMS_OUTPUT.PUT_LINE ('Employee ID:  ' || emp_id);
 END;
-
+```
 ## Cursors
 
 #### 1. Create PL/SQL block to display details of employees King
+```sql
 DECLARE
 	eid number;
 	ename varchar2 (20);
@@ -162,8 +182,9 @@ BEGIN
 	END LOOP;
 	CLOSE emp_king;
 END;
-
+```
 #### 2. Create PL/SQL block to display all duplicate names from employees 
+```sql
 DECLARE
 	fname varchar2 (30);
 	lname varchar2 (30);
@@ -196,7 +217,10 @@ BEGIN
 	END LOOP;
 	CLOSE emp_did;
 END;
+```
+
 #### 3. Create PL/SQL block to accept department_id from user and display detail of employees working under this department.
+```sql
 DECLARE
 	ename varchar2 (30);
 	emp_id number;
@@ -222,6 +246,7 @@ BEGIN
 	END LOOP;
 	CLOSE emp_did;
 END;
+```
 #### 4. Create PL/SQL block to display highest salary from each department 
 DECLARE
 	emp_id number;
@@ -459,43 +484,3 @@ BEGIN
 	END LOOP;
 	CLOSE emp_did;
 END;
-
-
-
---1
-
-
---2
-
-
---13
-
-
-/
---14
-
-
-/
---15
-
-
-/
---16
-
-/
---17
-
-
-/
---18
-
-
-/
---19
-
-
-/
---20
-
-
-/
