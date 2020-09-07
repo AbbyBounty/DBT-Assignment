@@ -136,68 +136,10 @@ BEGIN
 	DBMS_OUTPUT.PUT_LINE ('Name: ' || ename);
 	DBMS_OUTPUT.PUT_LINE ('Employee ID:  ' || emp_id);
 END;
+
 ## Cursors
 
 #### 1. Create PL/SQL block to display details of employees King
-
-#### 2. Create PL/SQL block to display all duplicate names from employees 
-
-#### 3. Create PL/SQL block to accept department_id from user and display detail of employees working under this department.
-
-#### 4. Create PL/SQL block to display highest salary from each department 5. Create PL/SQL block to display details of employees earning highest salary in their department
-
-#### 6. Create PL/SQL block to display all employees working in Toronto
-
-#### 7. Create PL/SQL block to display employees hired in month of Aug
-
-#### 8. Display eid, full name, salary, job_id, dept_name, city of employees for user entered city.
-
-#### 9. Create PL/SQL block to display employees who have changed their job atleast once
-
-#### 10. Create PL/SQL block to details of employees earning salary in range 10000 to 20000
-
-
--- 1
-
-
---2
-
-
-END;
-
---3
-
-
-END;
-
---4
-
-
-END;
-
---5
-
-
-END;
-
---6
-
-
---7
-
-
---8
-
-
---9
-
-
---10
-
-
-------------------------
---1
-
 DECLARE
 	eid number;
 	ename varchar2 (20);
@@ -221,7 +163,7 @@ BEGIN
 	CLOSE emp_king;
 END;
 
---2
+#### 2. Create PL/SQL block to display all duplicate names from employees 
 DECLARE
 	fname varchar2 (30);
 	lname varchar2 (30);
@@ -254,8 +196,7 @@ BEGIN
 	END LOOP;
 	CLOSE emp_did;
 END;
-
---13
+#### 3. Create PL/SQL block to accept department_id from user and display detail of employees working under this department.
 DECLARE
 	ename varchar2 (30);
 	emp_id number;
@@ -281,9 +222,7 @@ BEGIN
 	END LOOP;
 	CLOSE emp_did;
 END;
-
-/
---14
+#### 4. Create PL/SQL block to display highest salary from each department 
 DECLARE
 	emp_id number;
 	sal number;
@@ -320,8 +259,7 @@ BEGIN
 	CLOSE emp_did;
 END;
 
-/
---15
+#### 5. Create PL/SQL block to display details of employees earning highest salary in their department
 DECLARE
 	ename varchar2 (30);
 	emp_id number;
@@ -361,9 +299,7 @@ BEGIN
 	END LOOP;
 	CLOSE emp_did;
 END;
-
-/
---16
+#### 6. Create PL/SQL block to display all employees working in Toronto
 DECLARE
 	ename varchar2 (30);
 	emp_id number;
@@ -395,6 +331,37 @@ BEGIN
 	END LOOP;
 	CLOSE emp_did;
 END;
+
+#### 7. Create PL/SQL block to display employees hired in month of Aug
+
+#### 8. Display eid, full name, salary, job_id, dept_name, city of employees for user entered city.
+
+#### 9. Create PL/SQL block to display employees who have changed their job atleast once
+
+#### 10. Create PL/SQL block to details of employees earning salary in range 10000 to 20000
+
+
+
+
+--1
+
+
+--2
+
+
+--13
+
+
+/
+--14
+
+
+/
+--15
+
+
+/
+--16
 
 /
 --17
