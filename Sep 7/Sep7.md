@@ -5,17 +5,83 @@ PRN : 200243020003
 ```
 ## Anonymous Block
 #### 1. Create and execute a simple anonymous block that outputs ?Hello World.?
-
+BEGIN
+	dbms_output.put_line ('hello world');
+END;
 #### 2. Create and execute a simple anonymous block to display highest salary among-st employees
-
+DECLARE
+	SALARY NUMBER;
+BEGIN
+	SELECT
+		max(SALARY) INTO SALARY
+	FROM
+		EMPLOYEES;
+	dbms_output.put_line (SALARY);
+END;
 #### 3. Create PL/SQL block to display details of the employee who earns highest salary
-
+DECLARE
+	FIRST_NAME VARCHAR2 (20);
+	LAST_NAME VARCHAR2 (30);
+	SALARY NUMBER;
+BEGIN
+	SELECT
+		FIRST_NAME,
+		LAST_NAME,
+		SALARY INTO FIRST_NAME,
+		LAST_NAME,
+		SALARY
+	FROM
+		EMPLOYEES
+	WHERE
+		SALARY = (
+			SELECT
+				MAX(SALARY)
+			FROM
+				EMPLOYEES);
+	dbms_output.put_line (FIRST_NAME || ' ' || LAST_NAME || ' ' || SALARY);
+END;
 #### 4. Create PL/SQL block to display the details for user entered employee_id
-
+DECLARE
+	FIRST_NAME VARCHAR2 (30);
+BEGIN
+	SELECT
+		FIRST_NAME INTO FIRST_NAME
+	FROM
+		EMPLOYEES
+	WHERE
+		EMPLOYEE_ID = :id;
+	dbms_output.put_line (FIRST_NAME);
+END;
 #### 5. Create PL/SQL block to display details nos. 1 to 10
-
+DECLARE
+	n number;
+BEGIN
+	n: = 1;
+	WHILE n <= 10 LOOP
+		DBMS_OUTPUT.PUT_LINE (' ' || n);
+		n := n + 1;
+	END LOOP;
+END;
 #### 6. Create block to accept no. from user and check if it is Prime or Not and display message accordingly
+DECLARE
+	n NUMBER;
+	i NUMBER: = 2;
+	m NUMBER: = 0;
+	flag NUMBER: = 0;
+BEGIN
+	n: = & n;
+	m = n / 2;
+	FOR i IN 2..m LOOP
+		IF n % i == 0 THEN
+			DBMS_OUTPUT.PUT_LINE ('Number is not Prime ');
+			flag = 1;
+			EXIT;
+			i: = i + 1;
+			IF flag == 0 THEN
+				DBMS_OUTPUT.PUT_LINE ('Number is  Prime ');
+				END;
 
+END;
 #### 7. Create PL/SQL block to accept no. from user and check if it is armstrong no. or not
 
 #### 8. Create PL/SQL block to accept radius and calculate and display area and circumference of circle
@@ -46,96 +112,30 @@ PRN : 200243020003
 
 
 -- 1
-BEGIN
-	dbms_output.put_line ('hello world');
-END;
+
 
 --2
-DECLARE
-	SALARY NUMBER;
-BEGIN
-	SELECT
-		max(SALARY) INTO SALARY
-	FROM
-		EMPLOYEES;
-	dbms_output.put_line (SALARY);
-END;
+
 
 END;
 
 --3
-DECLARE
-	FIRST_NAME VARCHAR2 (20);
-	LAST_NAME VARCHAR2 (30);
-	SALARY NUMBER;
-BEGIN
-	SELECT
-		FIRST_NAME,
-		LAST_NAME,
-		SALARY INTO FIRST_NAME,
-		LAST_NAME,
-		SALARY
-	FROM
-		EMPLOYEES
-	WHERE
-		SALARY = (
-			SELECT
-				MAX(SALARY)
-			FROM
-				EMPLOYEES);
-	dbms_output.put_line (FIRST_NAME || ' ' || LAST_NAME || ' ' || SALARY);
-END;
+
 
 END;
 
 --4
-DECLARE
-	FIRST_NAME VARCHAR2 (30);
-BEGIN
-	SELECT
-		FIRST_NAME INTO FIRST_NAME
-	FROM
-		EMPLOYEES
-	WHERE
-		EMPLOYEE_ID = :id;
-	dbms_output.put_line (FIRST_NAME);
-END;
+
 
 END;
 
 --5
-DECLARE
-	n number;
-BEGIN
-	n: = 1;
-	WHILE n <= 10 LOOP
-		DBMS_OUTPUT.PUT_LINE (' ' || n);
-		n := n + 1;
-	END LOOP;
-END;
+
 
 END;
 
 --6
-DECLARE
-	n NUMBER;
-	i NUMBER: = 2;
-	m NUMBER: = 0;
-	flag NUMBER: = 0;
-BEGIN
-	n: = & n;
-	m = n / 2;
-	FOR i IN 2..m LOOP
-		IF n % i == 0 THEN
-			DBMS_OUTPUT.PUT_LINE ('Number is not Prime ');
-			flag = 1;
-			EXIT;
-			i: = i + 1;
-			IF flag == 0 THEN
-				DBMS_OUTPUT.PUT_LINE ('Number is  Prime ');
-				END;
 
-END;
 
 --7
 DECLARE
