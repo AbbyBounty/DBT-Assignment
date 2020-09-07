@@ -333,38 +333,6 @@ BEGIN
 END;
 
 #### 7. Create PL/SQL block to display employees hired in month of Aug
-
-#### 8. Display eid, full name, salary, job_id, dept_name, city of employees for user entered city.
-
-#### 9. Create PL/SQL block to display employees who have changed their job atleast once
-
-#### 10. Create PL/SQL block to details of employees earning salary in range 10000 to 20000
-
-
-
-
---1
-
-
---2
-
-
---13
-
-
-/
---14
-
-
-/
---15
-
-
-/
---16
-
-/
---17
 DECLARE
 	ename varchar2 (30);
 	emp_id number;
@@ -394,9 +362,7 @@ BEGIN
 	END LOOP;
 	CLOSE emp_did;
 END;
-
-/
---18
+#### 8. Display eid, full name, salary, job_id, dept_name, city of employees for user entered city.
 DECLARE
 	ename varchar2 (30);
 	emp_id number;
@@ -431,6 +397,40 @@ BEGIN
 	END LOOP;
 	CLOSE emp_did;
 END;
+#### 9. Create PL/SQL block to display employees who have changed their job atleast once
+
+#### 10. Create PL/SQL block to details of employees earning salary in range 10000 to 20000
+
+
+
+
+--1
+
+
+--2
+
+
+--13
+
+
+/
+--14
+
+
+/
+--15
+
+
+/
+--16
+
+/
+--17
+
+
+/
+--18
+
 
 /
 --19
