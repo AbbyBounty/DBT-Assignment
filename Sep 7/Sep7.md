@@ -327,7 +327,10 @@ BEGIN
 	END LOOP;
 	CLOSE emp_did;
 END;
+```
+
 #### 6. Create PL/SQL block to display all employees working in Toronto
+```sql
 DECLARE
 	ename varchar2 (30);
 	emp_id number;
@@ -359,8 +362,10 @@ BEGIN
 	END LOOP;
 	CLOSE emp_did;
 END;
+```
 
 #### 7. Create PL/SQL block to display employees hired in month of Aug
+```sql
 DECLARE
 	ename varchar2 (30);
 	emp_id number;
@@ -390,7 +395,10 @@ BEGIN
 	END LOOP;
 	CLOSE emp_did;
 END;
+```
+
 #### 8. Display eid, full name, salary, job_id, dept_name, city of employees for user entered city.
+```sql
 DECLARE
 	ename varchar2 (30);
 	emp_id number;
