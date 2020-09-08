@@ -23,6 +23,7 @@ PRN : 2
 
 #### 4.Create a procedure called GET_EMPLOYEE to query the EMPLOYEES table, retrieving the salary and job ID for an employee when provided with the employee ID. Execute the procedure using host variables for the two OUT parameters?one for the salary and the other for the job ID. Display the salary and job ID for employee ID 120.
 
+
 --1 CREATE OR REPLACE FUNCTION total_salary RETURN number
 AS HRA
 	number: = 100;
