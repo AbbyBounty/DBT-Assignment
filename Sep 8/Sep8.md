@@ -131,6 +131,7 @@ WHERE
 ## PL/SQL PROCEDURE
 
 #### 1.Create a procedure called ADD_JOB to insert a new job into the JOBS table. Provide the ID and title of the job using two parameters.
+```sql
 CREATE OR REPLACE PROCEDURE ADD_JOB (id IN VARCHAR2, job_title IN VARCHAR2)
 AS BEGIN
 	INSERT INTO JOBS (JOB_ID, JOB_TITLE)
@@ -144,7 +145,10 @@ DECLARE
 BEGIN ADD_JOB (id,
 	job);
 END;
+```
+
 #### 2.Create a procedure called UPD_JOB to update the job title. Provide the job ID and a new title using two parameters. Include the necessary exception handling if no update
+```sql
 	CREATE OR REPLACE PROCEDURE UPD_JOB (id IN VARCHAR2, new_title IN VARCHAR2)
 	AS BEGIN
 	UPDATE
@@ -158,6 +162,7 @@ END;
 END;
 	EXECUTE UPD_JOB ('AC_MGR',
 		'CODER');
+```
 #### 3.Create a procedure, ADD_EMPLOYEE, to insert a new employee into the EMPLOYEE table. The procedure should call a VALID_DEPTID function to check whether the department ID specified for the new employee exists in the DEPARTMENTS table.
 	CREATE OR REPLACE PROCEDURE add_emp AS
 	BEGIN
