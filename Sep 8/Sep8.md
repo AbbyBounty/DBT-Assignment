@@ -6,6 +6,7 @@ PRN : 2
 ## PL/SQL FUNCTION
 
 #### 1.Write a function which returns basic salary of an employee (DA+HRA+ALLOWANCE). Later use the above function to calculate total salary of employees
+```sql
 CREATE OR REPLACE FUNCTION total_salary RETURN number
 AS HRA
 	number: = 100;
@@ -30,7 +31,10 @@ BEGIN
 END;
 
 /
+```
+
 #### 2.Write a function which returns max salary of user entered department_id. Use this function to display max salary and its department details
+```sql
 CREATE OR REPLACE FUNCTION max_salary (id IN NUMBER) RETURN NUMBER
 AS sal
 	NUMBER;
@@ -57,7 +61,10 @@ BEGIN
 END;
 
 /
+```
+
 #### 3.Create and compile a function called GET_JOB to return a job title. Create a VARCHAR2 host variable called TITLE, allowing a length of 35 characters. Invoke the function with SA_REP job ID to return the value in the host variable. Print the host variable to view the result.
+```sql
 CREATE OR REPLACE FUNCTION get_job (id NUMBER) RETURN VARCHAR2
 AS job
 	VARCHAR2 (30);
@@ -84,7 +91,10 @@ BEGIN
 END;
 
 /
+```
+
 #### 4.Create a function called GET_ANNUAL_COMP to return the annual salary computed from an employee?s monthly salary and commission passed as parameters.Develop and store the GET_ANNUAL_COMP function, accepting parameter values for monthly salary and commission. Either or both values passed can be NULL, but the function should still return a non-NULL annual salary. Use the following basic formula to calculate the annual salary:(salary*12) + (commission_pct*salary*12) Use the function in a SELECT statement against the EMPLOYEES table for employees in department 30.
+```sql
 CREATE OR REPLACE FUNCTION GET_ANNUAL_COMP (sal IN number, comm IN number) RETURN number
 AS annual_salary
 	number;
@@ -116,6 +126,8 @@ FROM
 	EMPLOYEES
 WHERE
 	DEPARTMENT_ID = 30;
+```
+
 ## PL/SQL PROCEDURE
 
 #### 1.Create a procedure called ADD_JOB to insert a new job into the JOBS table. Provide the ID and title of the job using two parameters.
@@ -189,4 +201,29 @@ BEGIN
 END;
 #### 4.Create a procedure called GET_EMPLOYEE to query the EMPLOYEES table, retrieving the salary and job ID for an employee when provided with the employee ID. Execute the procedure using host variables for the two OUT parameters?one for the salary and the other for the job ID. Display the salary and job ID for employee ID 120.
 
+CREATE OR REPLACE PROCEDURE GET_EMPLOYEE (id IN NUMBER, sal out VARCHAR2, jobid out VARCHAR2) AS
+BEGIN
+SELECT
+	SALARY,
+	JOB_ID INTO sal,
+	jobid
+FROM
+	EMPLOYEES
+WHERE
+	EMPLOYEE_ID = id;
 
+COMMIT;
+
+END;
+
+DECLARE
+	job employees.job_id % TYPE;
+	sal number;
+BEGIN
+	get_employee (120,
+		sal,
+		job);
+	dbms_output.put_line ('employee_id:120' || ' job_id:' || job || ' salary:' || sal);
+END;
+
+/
