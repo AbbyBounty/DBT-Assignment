@@ -208,7 +208,7 @@ END;
 ```
 
 #### 4.Create a procedure called GET_EMPLOYEE to query the EMPLOYEES table, retrieving the salary and job ID for an employee when provided with the employee ID. Execute the procedure using host variables for the two OUT parameters?one for the salary and the other for the job ID. Display the salary and job ID for employee ID 120.
-
+```sql
 CREATE OR REPLACE PROCEDURE GET_EMPLOYEE (id IN NUMBER, sal out VARCHAR2, jobid out VARCHAR2) AS
 BEGIN
 SELECT
@@ -235,3 +235,4 @@ BEGIN
 END;
 
 /
+```
