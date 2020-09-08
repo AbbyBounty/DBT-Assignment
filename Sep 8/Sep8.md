@@ -164,6 +164,7 @@ END;
 		'CODER');
 ```
 #### 3.Create a procedure, ADD_EMPLOYEE, to insert a new employee into the EMPLOYEE table. The procedure should call a VALID_DEPTID function to check whether the department ID specified for the new employee exists in the DEPARTMENTS table.
+```sql
 	CREATE OR REPLACE PROCEDURE add_emp AS
 	BEGIN
 		INSERT INTO emp100
@@ -204,6 +205,8 @@ BEGIN
 		dbms_output.put_line ('enter valid department number');
 	END IF;
 END;
+```
+
 #### 4.Create a procedure called GET_EMPLOYEE to query the EMPLOYEES table, retrieving the salary and job ID for an employee when provided with the employee ID. Execute the procedure using host variables for the two OUT parameters?one for the salary and the other for the job ID. Display the salary and job ID for employee ID 120.
 
 CREATE OR REPLACE PROCEDURE GET_EMPLOYEE (id IN NUMBER, sal out VARCHAR2, jobid out VARCHAR2) AS
