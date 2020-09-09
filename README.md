@@ -221,3 +221,16 @@
             3.Create a procedure, ADD_EMPLOYEE, to insert a new employee into the EMPLOYEE table. The procedure should call a VALID_DEPTID function to check whether the department ID specified for the new employee exists in the DEPARTMENTS table.
             4.Create a procedure called GET_EMPLOYEE to query the EMPLOYEES table, retrieving the salary and job ID for an employee when provided with the employee ID. Execute the procedure using host variables for the two OUT parameters?one for
             the salary and the other for the job ID. Display the salary and job ID for employee ID 120.
+
+ ### Sep 9
+
+            1. The rows in the JOBS table store a minimum salary and a maximum salary allowed for different JOB_ID values. You are asked to write code to ensure that employees salaries fall within the range allowed for their job type, for insert and update
+            operations.
+            Write a procedure called CHECK_SALARY that accepts two parameters, one for
+            an employee's job ID string and the other for the salary. The procedure uses the job ID to determine the minimum and maximum salary for the speci ied job. If the salary parameter does not fall within the salary range of the job, inclusive of the minimum and maximum, then it should raise an application exception, with the message Invalid salary <sal>. Salaries for job <jobid> must be between<min> and <max>. Replace the various items in the message with values supplied
+            by parameters and variables populated by queries. Save the  ile. [Use table Jobs]
+            Create a trigger called CHECK_SALARY_TRG on the copy_emp table that  ires before an INSERT or UPDATE operation on each row. The trigger must call
+            the CHECK_SALARY procedure to carry out the business logic. The trigger should pass the new job ID and salary to the procedure parameters.
+
+
+            2. You are asked to prevent employees from being deleted during business hours. Write a statement trigger called DELETE_EMP_TRG on the employees_copy table to prevent rows from being deleted during weekday business hours, which are from 9:00 a.m. to 6:00 p.m. And day MON to FRI". Now, try deleting employee 205 from employees_copy table.
