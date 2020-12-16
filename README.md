@@ -14,6 +14,8 @@
       9. Write a query to display last_name and job_id as follows eg: King is working as manager and name the column as "Employee Details"
       10. Display only unique departments from employees table
       11. Display unique departments and employee_id,last_name,salary working in those departments
+      11. Display unique departments and employee_id,last_name,salary working in those departments
+      
 
       Restricting and Sorting Data
       1. Display emp_id,name,salary,commission,department_id for department 80 and rename column as Emp#,Employee,Salary,Comm respectively
@@ -227,9 +229,9 @@
             1. The rows in the JOBS table store a minimum salary and a maximum salary allowed for different JOB_ID values. You are asked to write code to ensure that employees salaries fall within the range allowed for their job type, for insert and update
             operations.
             Write a procedure called CHECK_SALARY that accepts two parameters, one for
-            an employee's job ID string and the other for the salary. The procedure uses the job ID to determine the minimum and maximum salary for the speci ied job. If the salary parameter does not fall within the salary range of the job, inclusive of the minimum and maximum, then it should raise an application exception, with the message Invalid salary <sal>. Salaries for job <jobid> must be between<min> and <max>. Replace the various items in the message with values supplied
-            by parameters and variables populated by queries. Save the  ile. [Use table Jobs]
-            Create a trigger called CHECK_SALARY_TRG on the copy_emp table that  ires before an INSERT or UPDATE operation on each row. The trigger must call
+            an employee's job ID string and the other for the salary. The procedure uses the job ID to determine the minimum and maximum salary for the speci�ied job. If the salary parameter does not fall within the salary range of the job, inclusive of the minimum and maximum, then it should raise an application exception, with the message Invalid salary <sal>. Salaries for job <jobid> must be between<min> and <max>. Replace the various items in the message with values supplied
+            by parameters and variables populated by queries. Save the �ile. [Use table Jobs]
+            Create a trigger called CHECK_SALARY_TRG on the copy_emp table that �ires before an INSERT or UPDATE operation on each row. The trigger must call
             the CHECK_SALARY procedure to carry out the business logic. The trigger should pass the new job ID and salary to the procedure parameters.
 
 
